@@ -5,6 +5,7 @@ import { useRouter } from "next/dist/client/router";
 import TemplateRenderer from "../components/TemplateRenderer";
 
 export default function Home(props) {
+  console.log(props);
   const { locale } = useRouter();
   return (
     <Layout>

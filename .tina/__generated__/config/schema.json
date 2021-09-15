@@ -21,7 +21,7 @@
     {
       "label": "ART-Talks Page",
       "name": "arttalks",
-      "path": "content/pages",
+      "path": "content/arttalks",
       "fields": [
         {
           "label": "Main Title",
@@ -258,10 +258,10 @@
     {
       "label": "Home",
       "name": "home",
-      "path": "content/pages",
+      "path": "content/home",
       "fields": [
         {
-          "label": "ART-Talks description",
+          "label": "Description",
           "type": "object",
           "name": "description",
           "fields": [

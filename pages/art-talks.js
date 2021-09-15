@@ -6,6 +6,7 @@ import TemplateRenderer from "../components/TemplateRenderer";
 
 export default function ARTTalks(props) {
   const { locale } = useRouter();
+  console.log(props);
   return (
     <Layout>
       <main>
@@ -110,7 +111,6 @@ export const getStaticProps = async () => {
   `,
     variables: { relativePath: "arttalks.json" },
   });
-  console.log({ ...tinaProps.data.getArttalksDocument.data });
   return {
     props: {
       ...tinaProps,

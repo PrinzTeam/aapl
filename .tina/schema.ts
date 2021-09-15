@@ -48,7 +48,7 @@ export default defineSchema({
     {
       label: "ART-Talks Page",
       name: "arttalks",
-      path: "content/pages",
+      path: "content/arttalks",
       fields: [
         {
           label: "Main Title",
@@ -127,10 +127,10 @@ export default defineSchema({
     {
       label: "Home",
       name: "home",
-      path: "content/pages",
+      path: "content/home",
       fields: [
         {
-          label: "ART-Talks description",
+          label: "Description",
           type: "object",
           name: "description",
           fields: localizedString({ textArea: true }),
