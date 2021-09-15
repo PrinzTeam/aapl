@@ -49,6 +49,8 @@ type Query {
   getPostsList(before: String, after: String, first: Int, last: Int): PostsConnection!
   getHomeDocument(relativePath: String): HomeDocument!
   getHomeList(before: String, after: String, first: Int, last: Int): HomeConnection!
+  getArttalksDocument(relativePath: String): ArttalksDocument!
+  getArttalksList(before: String, after: String, first: Int, last: Int): ArttalksConnection!
 }
 
 type DocumentConnectionEdges {
@@ -74,7 +76,7 @@ type Collection {
   documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument | HomeDocument
+union DocumentNode = PostsDocument | HomeDocument | ArttalksDocument
 
 type Posts {
   title: String
@@ -101,12 +103,6 @@ type PostsConnection implements Connection {
   edges: [PostsConnectionEdges]
 }
 
-type HomeMainTitle {
-  en: String
-  fr: String
-  kor: String
-}
-
 type HomeDescription {
   en: String
   fr: String
@@ -125,41 +121,12 @@ type HomeDaysSubtitle {
   kor: String
 }
 
-type HomeDaysBodyTextTitle {
-  en: String
-  fr: String
-  kor: String
-}
-
-type HomeDaysBodyText {
-  title: HomeDaysBodyTextTitle
-}
-
-type HomeDaysBodyVideo {
-  vimeoUrl: String
-}
-
-type HomeDaysBodyImageCaption {
-  en: String
-  fr: String
-  kor: String
-}
-
-type HomeDaysBodyImage {
-  caption: HomeDaysBodyImageCaption
-  imageUrl: String
-}
-
-union HomeDaysBody = HomeDaysBodyText | HomeDaysBodyVideo | HomeDaysBodyImage
-
 type HomeDays {
   title: HomeDaysTitle
   subtitle: HomeDaysSubtitle
-  body: [HomeDaysBody]
 }
 
 type Home {
-  mainTitle: HomeMainTitle
   description: HomeDescription
   days: [HomeDays]
 }
@@ -184,27 +151,106 @@ type HomeConnection implements Connection {
   edges: [HomeConnectionEdges]
 }
 
+type ArttalksMainTitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type ArttalksDescription {
+  en: String
+  fr: String
+  kor: String
+}
+
+type ArttalksDaysTitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type ArttalksDaysSubtitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type ArttalksDaysBodyTextTitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type ArttalksDaysBodyText {
+  title: ArttalksDaysBodyTextTitle
+}
+
+type ArttalksDaysBodyVideo {
+  vimeoUrl: String
+}
+
+type ArttalksDaysBodyImageCaption {
+  en: String
+  fr: String
+  kor: String
+}
+
+type ArttalksDaysBodyImage {
+  caption: ArttalksDaysBodyImageCaption
+  imageUrl: String
+}
+
+union ArttalksDaysBody = ArttalksDaysBodyText | ArttalksDaysBodyVideo | ArttalksDaysBodyImage
+
+type ArttalksDays {
+  title: ArttalksDaysTitle
+  subtitle: ArttalksDaysSubtitle
+  body: [ArttalksDaysBody]
+}
+
+type Arttalks {
+  mainTitle: ArttalksMainTitle
+  description: ArttalksDescription
+  days: [ArttalksDays]
+}
+
+type ArttalksDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: Arttalks!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type ArttalksConnectionEdges {
+  cursor: String
+  node: ArttalksDocument
+}
+
+type ArttalksConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Int!
+  edges: [ArttalksConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String!, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
   updateHomeDocument(relativePath: String!, params: HomeMutation!): HomeDocument!
+  updateArttalksDocument(relativePath: String!, params: ArttalksMutation!): ArttalksDocument!
 }
 
 input DocumentMutation {
   posts: PostsMutation
   home: HomeMutation
+  arttalks: ArttalksMutation
 }
 
 input PostsMutation {
   title: String
   body: String
-}
-
-input HomeMainTitleMutation {
-  en: String
-  fr: String
-  kor: String
 }
 
 input HomeDescriptionMutation {
@@ -225,47 +271,81 @@ input HomeDaysSubtitleMutation {
   kor: String
 }
 
-input HomeDaysBodyTextTitleMutation {
-  en: String
-  fr: String
-  kor: String
-}
-
-input HomeDaysBodyTextMutation {
-  title: HomeDaysBodyTextTitleMutation
-}
-
-input HomeDaysBodyVideoMutation {
-  vimeoUrl: String
-}
-
-input HomeDaysBodyImageCaptionMutation {
-  en: String
-  fr: String
-  kor: String
-}
-
-input HomeDaysBodyImageMutation {
-  caption: HomeDaysBodyImageCaptionMutation
-  imageUrl: String
-}
-
-input HomeDaysBodyMutation {
-  text: HomeDaysBodyTextMutation
-  video: HomeDaysBodyVideoMutation
-  image: HomeDaysBodyImageMutation
-}
-
 input HomeDaysMutation {
   title: HomeDaysTitleMutation
   subtitle: HomeDaysSubtitleMutation
-  body: [HomeDaysBodyMutation]
 }
 
 input HomeMutation {
-  mainTitle: HomeMainTitleMutation
   description: HomeDescriptionMutation
   days: [HomeDaysMutation]
+}
+
+input ArttalksMainTitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArttalksDescriptionMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArttalksDaysTitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArttalksDaysSubtitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArttalksDaysBodyTextTitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArttalksDaysBodyTextMutation {
+  title: ArttalksDaysBodyTextTitleMutation
+}
+
+input ArttalksDaysBodyVideoMutation {
+  vimeoUrl: String
+}
+
+input ArttalksDaysBodyImageCaptionMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArttalksDaysBodyImageMutation {
+  caption: ArttalksDaysBodyImageCaptionMutation
+  imageUrl: String
+}
+
+input ArttalksDaysBodyMutation {
+  text: ArttalksDaysBodyTextMutation
+  video: ArttalksDaysBodyVideoMutation
+  image: ArttalksDaysBodyImageMutation
+}
+
+input ArttalksDaysMutation {
+  title: ArttalksDaysTitleMutation
+  subtitle: ArttalksDaysSubtitleMutation
+  body: [ArttalksDaysBodyMutation]
+}
+
+input ArttalksMutation {
+  mainTitle: ArttalksMainTitleMutation
+  description: ArttalksDescriptionMutation
+  days: [ArttalksDaysMutation]
 }
 
 schema {

@@ -30,60 +30,10 @@
       ]
     },
     {
-      "label": "Home Page",
+      "label": "Home",
       "name": "home",
       "path": "content/pages",
       "fields": [
-        {
-          "label": "Main Title",
-          "type": "object",
-          "name": "mainTitle",
-          "fields": [
-            {
-              "type": "string",
-              "name": "en",
-              "label": "en",
-              "ui": {
-                "component": "textarea"
-              },
-              "namespace": [
-                "home",
-                "mainTitle",
-                "en"
-              ]
-            },
-            {
-              "type": "string",
-              "name": "fr",
-              "label": "fr",
-              "ui": {
-                "component": "textarea"
-              },
-              "namespace": [
-                "home",
-                "mainTitle",
-                "fr"
-              ]
-            },
-            {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
-              "ui": {
-                "component": "textarea"
-              },
-              "namespace": [
-                "home",
-                "mainTitle",
-                "kor"
-              ]
-            }
-          ],
-          "namespace": [
-            "home",
-            "mainTitle"
-          ]
-        },
         {
           "label": "ART-Talks description",
           "type": "object",
@@ -247,6 +197,236 @@
                 "days",
                 "subtitle"
               ]
+            }
+          ],
+          "namespace": [
+            "home",
+            "days"
+          ]
+        }
+      ],
+      "namespace": [
+        "home"
+      ]
+    },
+    {
+      "label": "ART-Talks Page",
+      "name": "arttalks",
+      "path": "content/pages",
+      "fields": [
+        {
+          "label": "Main Title",
+          "type": "object",
+          "name": "mainTitle",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              },
+              "namespace": [
+                "arttalks",
+                "mainTitle",
+                "en"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              },
+              "namespace": [
+                "arttalks",
+                "mainTitle",
+                "fr"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              },
+              "namespace": [
+                "arttalks",
+                "mainTitle",
+                "kor"
+              ]
+            }
+          ],
+          "namespace": [
+            "arttalks",
+            "mainTitle"
+          ]
+        },
+        {
+          "label": "ART-Talks description",
+          "type": "object",
+          "name": "description",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              },
+              "namespace": [
+                "arttalks",
+                "description",
+                "en"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              },
+              "namespace": [
+                "arttalks",
+                "description",
+                "fr"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              },
+              "namespace": [
+                "arttalks",
+                "description",
+                "kor"
+              ]
+            }
+          ],
+          "namespace": [
+            "arttalks",
+            "description"
+          ]
+        },
+        {
+          "label": "Days",
+          "type": "object",
+          "name": "days",
+          "list": true,
+          "fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "arttalks",
+                    "days",
+                    "title",
+                    "en"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "arttalks",
+                    "days",
+                    "title",
+                    "fr"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "arttalks",
+                    "days",
+                    "title",
+                    "kor"
+                  ]
+                }
+              ],
+              "namespace": [
+                "arttalks",
+                "days",
+                "title"
+              ]
+            },
+            {
+              "label": "Subtitle",
+              "name": "subtitle",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "arttalks",
+                    "days",
+                    "subtitle",
+                    "en"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "arttalks",
+                    "days",
+                    "subtitle",
+                    "fr"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "arttalks",
+                    "days",
+                    "subtitle",
+                    "kor"
+                  ]
+                }
+              ],
+              "namespace": [
+                "arttalks",
+                "days",
+                "subtitle"
+              ]
             },
             {
               "label": "Body",
@@ -271,7 +451,7 @@
                             "component": "textarea"
                           },
                           "namespace": [
-                            "home",
+                            "arttalks",
                             "days",
                             "body",
                             "text",
@@ -287,7 +467,7 @@
                             "component": "textarea"
                           },
                           "namespace": [
-                            "home",
+                            "arttalks",
                             "days",
                             "body",
                             "text",
@@ -303,7 +483,7 @@
                             "component": "textarea"
                           },
                           "namespace": [
-                            "home",
+                            "arttalks",
                             "days",
                             "body",
                             "text",
@@ -313,7 +493,7 @@
                         }
                       ],
                       "namespace": [
-                        "home",
+                        "arttalks",
                         "days",
                         "body",
                         "text",
@@ -322,7 +502,7 @@
                     }
                   ],
                   "namespace": [
-                    "home",
+                    "arttalks",
                     "days",
                     "body",
                     "text"
@@ -337,7 +517,7 @@
                       "name": "vimeoUrl",
                       "type": "string",
                       "namespace": [
-                        "home",
+                        "arttalks",
                         "days",
                         "body",
                         "video",
@@ -346,7 +526,7 @@
                     }
                   ],
                   "namespace": [
-                    "home",
+                    "arttalks",
                     "days",
                     "body",
                     "video"
@@ -369,7 +549,7 @@
                             "component": "text"
                           },
                           "namespace": [
-                            "home",
+                            "arttalks",
                             "days",
                             "body",
                             "image",
@@ -385,7 +565,7 @@
                             "component": "text"
                           },
                           "namespace": [
-                            "home",
+                            "arttalks",
                             "days",
                             "body",
                             "image",
@@ -401,7 +581,7 @@
                             "component": "text"
                           },
                           "namespace": [
-                            "home",
+                            "arttalks",
                             "days",
                             "body",
                             "image",
@@ -411,7 +591,7 @@
                         }
                       ],
                       "namespace": [
-                        "home",
+                        "arttalks",
                         "days",
                         "body",
                         "image",
@@ -423,7 +603,7 @@
                       "name": "imageUrl",
                       "type": "image",
                       "namespace": [
-                        "home",
+                        "arttalks",
                         "days",
                         "body",
                         "image",
@@ -432,7 +612,7 @@
                     }
                   ],
                   "namespace": [
-                    "home",
+                    "arttalks",
                     "days",
                     "body",
                     "image"
@@ -440,20 +620,20 @@
                 }
               ],
               "namespace": [
-                "home",
+                "arttalks",
                 "days",
                 "body"
               ]
             }
           ],
           "namespace": [
-            "home",
+            "arttalks",
             "days"
           ]
         }
       ],
       "namespace": [
-        "home"
+        "arttalks"
       ]
     }
   ],

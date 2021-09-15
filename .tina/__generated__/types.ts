@@ -67,6 +67,8 @@ export type Query = {
   getPostsList: PostsConnection;
   getHomeDocument: HomeDocument;
   getHomeList: HomeConnection;
+  getArttalksDocument: ArttalksDocument;
+  getArttalksList: ArttalksConnection;
 };
 
 
@@ -119,6 +121,19 @@ export type QueryGetHomeListArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
+
+export type QueryGetArttalksDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryGetArttalksListArgs = {
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
 export type DocumentConnectionEdges = {
   __typename?: 'DocumentConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
@@ -153,7 +168,7 @@ export type CollectionDocumentsArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PostsDocument | HomeDocument;
+export type DocumentNode = PostsDocument | HomeDocument | ArttalksDocument;
 
 export type Posts = {
   __typename?: 'Posts';
@@ -184,13 +199,6 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
-export type HomeMainTitle = {
-  __typename?: 'HomeMainTitle';
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
 export type HomeDescription = {
   __typename?: 'HomeDescription';
   en?: Maybe<Scalars['String']>;
@@ -212,48 +220,14 @@ export type HomeDaysSubtitle = {
   kor?: Maybe<Scalars['String']>;
 };
 
-export type HomeDaysBodyTextTitle = {
-  __typename?: 'HomeDaysBodyTextTitle';
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyText = {
-  __typename?: 'HomeDaysBodyText';
-  title?: Maybe<HomeDaysBodyTextTitle>;
-};
-
-export type HomeDaysBodyVideo = {
-  __typename?: 'HomeDaysBodyVideo';
-  vimeoUrl?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyImageCaption = {
-  __typename?: 'HomeDaysBodyImageCaption';
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyImage = {
-  __typename?: 'HomeDaysBodyImage';
-  caption?: Maybe<HomeDaysBodyImageCaption>;
-  imageUrl?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBody = HomeDaysBodyText | HomeDaysBodyVideo | HomeDaysBodyImage;
-
 export type HomeDays = {
   __typename?: 'HomeDays';
   title?: Maybe<HomeDaysTitle>;
   subtitle?: Maybe<HomeDaysSubtitle>;
-  body?: Maybe<Array<Maybe<HomeDaysBody>>>;
 };
 
 export type Home = {
   __typename?: 'Home';
-  mainTitle?: Maybe<HomeMainTitle>;
   description?: Maybe<HomeDescription>;
   days?: Maybe<Array<Maybe<HomeDays>>>;
 };
@@ -281,12 +255,110 @@ export type HomeConnection = Connection & {
   edges?: Maybe<Array<Maybe<HomeConnectionEdges>>>;
 };
 
+export type ArttalksMainTitle = {
+  __typename?: 'ArttalksMainTitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDescription = {
+  __typename?: 'ArttalksDescription';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysTitle = {
+  __typename?: 'ArttalksDaysTitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysSubtitle = {
+  __typename?: 'ArttalksDaysSubtitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyTextTitle = {
+  __typename?: 'ArttalksDaysBodyTextTitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyText = {
+  __typename?: 'ArttalksDaysBodyText';
+  title?: Maybe<ArttalksDaysBodyTextTitle>;
+};
+
+export type ArttalksDaysBodyVideo = {
+  __typename?: 'ArttalksDaysBodyVideo';
+  vimeoUrl?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyImageCaption = {
+  __typename?: 'ArttalksDaysBodyImageCaption';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyImage = {
+  __typename?: 'ArttalksDaysBodyImage';
+  caption?: Maybe<ArttalksDaysBodyImageCaption>;
+  imageUrl?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBody = ArttalksDaysBodyText | ArttalksDaysBodyVideo | ArttalksDaysBodyImage;
+
+export type ArttalksDays = {
+  __typename?: 'ArttalksDays';
+  title?: Maybe<ArttalksDaysTitle>;
+  subtitle?: Maybe<ArttalksDaysSubtitle>;
+  body?: Maybe<Array<Maybe<ArttalksDaysBody>>>;
+};
+
+export type Arttalks = {
+  __typename?: 'Arttalks';
+  mainTitle?: Maybe<ArttalksMainTitle>;
+  description?: Maybe<ArttalksDescription>;
+  days?: Maybe<Array<Maybe<ArttalksDays>>>;
+};
+
+export type ArttalksDocument = Node & Document & {
+  __typename?: 'ArttalksDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: Arttalks;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type ArttalksConnectionEdges = {
+  __typename?: 'ArttalksConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<ArttalksDocument>;
+};
+
+export type ArttalksConnection = Connection & {
+  __typename?: 'ArttalksConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<ArttalksConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
   updateDocument: DocumentNode;
   updatePostsDocument: PostsDocument;
   updateHomeDocument: HomeDocument;
+  updateArttalksDocument: ArttalksDocument;
 };
 
 
@@ -315,20 +387,21 @@ export type MutationUpdateHomeDocumentArgs = {
   params: HomeMutation;
 };
 
+
+export type MutationUpdateArttalksDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: ArttalksMutation;
+};
+
 export type DocumentMutation = {
   posts?: Maybe<PostsMutation>;
   home?: Maybe<HomeMutation>;
+  arttalks?: Maybe<ArttalksMutation>;
 };
 
 export type PostsMutation = {
   title?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
-};
-
-export type HomeMainTitleMutation = {
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
 };
 
 export type HomeDescriptionMutation = {
@@ -349,46 +422,80 @@ export type HomeDaysSubtitleMutation = {
   kor?: Maybe<Scalars['String']>;
 };
 
-export type HomeDaysBodyTextTitleMutation = {
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyTextMutation = {
-  title?: Maybe<HomeDaysBodyTextTitleMutation>;
-};
-
-export type HomeDaysBodyVideoMutation = {
-  vimeoUrl?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyImageCaptionMutation = {
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyImageMutation = {
-  caption?: Maybe<HomeDaysBodyImageCaptionMutation>;
-  imageUrl?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysBodyMutation = {
-  text?: Maybe<HomeDaysBodyTextMutation>;
-  video?: Maybe<HomeDaysBodyVideoMutation>;
-  image?: Maybe<HomeDaysBodyImageMutation>;
-};
-
 export type HomeDaysMutation = {
   title?: Maybe<HomeDaysTitleMutation>;
   subtitle?: Maybe<HomeDaysSubtitleMutation>;
-  body?: Maybe<Array<Maybe<HomeDaysBodyMutation>>>;
 };
 
 export type HomeMutation = {
-  mainTitle?: Maybe<HomeMainTitleMutation>;
   description?: Maybe<HomeDescriptionMutation>;
   days?: Maybe<Array<Maybe<HomeDaysMutation>>>;
+};
+
+export type ArttalksMainTitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDescriptionMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysTitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysSubtitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyTextTitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyTextMutation = {
+  title?: Maybe<ArttalksDaysBodyTextTitleMutation>;
+};
+
+export type ArttalksDaysBodyVideoMutation = {
+  vimeoUrl?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyImageCaptionMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyImageMutation = {
+  caption?: Maybe<ArttalksDaysBodyImageCaptionMutation>;
+  imageUrl?: Maybe<Scalars['String']>;
+};
+
+export type ArttalksDaysBodyMutation = {
+  text?: Maybe<ArttalksDaysBodyTextMutation>;
+  video?: Maybe<ArttalksDaysBodyVideoMutation>;
+  image?: Maybe<ArttalksDaysBodyImageMutation>;
+};
+
+export type ArttalksDaysMutation = {
+  title?: Maybe<ArttalksDaysTitleMutation>;
+  subtitle?: Maybe<ArttalksDaysSubtitleMutation>;
+  body?: Maybe<Array<Maybe<ArttalksDaysBodyMutation>>>;
+};
+
+export type ArttalksMutation = {
+  mainTitle?: Maybe<ArttalksMainTitleMutation>;
+  description?: Maybe<ArttalksDescriptionMutation>;
+  days?: Maybe<Array<Maybe<ArttalksDaysMutation>>>;
 };
 

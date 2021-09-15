@@ -46,8 +46,41 @@ export default defineSchema({
       ],
     },
     {
-      label: "Home Page",
+      label: "Home",
       name: "home",
+      path: "content/pages",
+      fields: [
+        {
+          label: "ART-Talks description",
+          type: "object",
+          name: "description",
+          fields: localizedString({ textArea: true }),
+        },
+        {
+          label: "Days",
+          type: "object",
+          name: "days",
+          list: true,
+          fields: [
+            {
+              label: "Title",
+              name: "title",
+              type: "object",
+              fields: localizedString(),
+            },
+            {
+              label: "Subtitle",
+              name: "subtitle",
+              type: "object",
+              fields: localizedString(),
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: "ART-Talks Page",
+      name: "arttalks",
       path: "content/pages",
       fields: [
         {

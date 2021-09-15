@@ -19,8 +19,116 @@
       ]
     },
     {
-      "label": "Home Page",
+      "label": "Home",
       "name": "home",
+      "path": "content/pages",
+      "fields": [
+        {
+          "label": "ART-Talks description",
+          "type": "object",
+          "name": "description",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              }
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              }
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Days",
+          "type": "object",
+          "name": "days",
+          "list": true,
+          "fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Subtitle",
+              "name": "subtitle",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ART-Talks Page",
+      "name": "arttalks",
       "path": "content/pages",
       "fields": [
         {

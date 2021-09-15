@@ -4,7 +4,8 @@
     "resolveType": "multiCollectionDocumentList",
     "collections": [
       "posts",
-      "home"
+      "home",
+      "arttalks"
     ]
   },
   "Node": {
@@ -81,5 +82,24 @@
       "video": "HomeDaysBodyVideo",
       "image": "HomeDaysBodyImage"
     }
+  },
+  "ArttalksDaysBody": {
+    "type": "ArttalksDaysBody",
+    "resolveType": "unionData",
+    "typeMap": {
+      "text": "ArttalksDaysBodyText",
+      "video": "ArttalksDaysBodyVideo",
+      "image": "ArttalksDaysBodyImage"
+    }
+  },
+  "ArttalksDocument": {
+    "type": "ArttalksDocument",
+    "resolveType": "collectionDocument",
+    "collection": "arttalks"
+  },
+  "ArttalksConnection": {
+    "type": "ArttalksConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "arttalks"
   }
 }

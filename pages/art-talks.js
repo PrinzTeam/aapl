@@ -6,13 +6,12 @@ import TemplateRenderer from "../components/TemplateRenderer";
 
 export default function ARTTalks(props) {
   const { locale } = useRouter();
-  console.log(props?.data?.getHomeDocument?.data?.days);
   return (
     <Layout>
       <main>
         <section className="bg-aapl-red mt-5">
           <h1 className="text-center text-5xl py-5 px-5 text-gray-50">
-            {props.data?.getHomeDocument?.data.mainTitle[locale || "en"]}
+            {props.data?.getArttalksDocument?.data.mainTitle[locale || "en"]}
           </h1>
         </section>
         <section className="mt-10">
@@ -20,14 +19,18 @@ export default function ARTTalks(props) {
             ART-Talks
           </h2>
           <p className="mt-8 text-xl">
-            {props?.data?.getHomeDocument?.data?.description[locale || "en"]}
+            {
+              props?.data?.getArttalksDocument?.data?.description[
+                locale || "en"
+              ]
+            }
           </p>
         </section>
         <section className="mt-10">
           <ul className="space-y-10">
-            {props?.data?.getHomeDocument?.data?.days.map((day) => (
+            {props?.data?.getArttalksDocument?.data?.days.map((day) => (
               <li key={day.title}>
-                <details className="text-6xl">
+                <details className="text-6xl cursor-pointer">
                   <summary className="list-none pl-5 py-10 text-white bg-gray-500">
                     <span className="font-bold">
                       {day.title[locale || "en"]}{" "}
@@ -57,7 +60,7 @@ export const getStaticProps = async () => {
   const tinaProps = await getStaticPropsForTina({
     query: `
     query {
-      getHomeDocument(relativePath: "home.json") {
+      getArttalksDocument(relativePath: "arttalks.json") {
         data {
           mainTitle {
             en
@@ -82,17 +85,17 @@ export const getStaticProps = async () => {
             }
             body {
               __typename
-              ... on HomeDaysBodyText {
+              ... on ArttalksDaysBodyText {
                 title {
                   en
                   fr
                   kor
                 }
               }
-              ... on HomeDaysBodyVideo {
+              ... on ArttalksDaysBodyVideo {
                 vimeoUrl
               }
-              ... on HomeDaysBodyImage {
+              ... on ArttalksDaysBodyImage {
                 caption {
                   en
                   fr
