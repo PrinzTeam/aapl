@@ -54,7 +54,7 @@ export default defineSchema({
           label: "Main Title",
           type: "object",
           name: "mainTitle",
-          fields: localizedString({ textArea: true }),
+          fields: localizedString(),
         },
         {
           label: "ART-Talks description",

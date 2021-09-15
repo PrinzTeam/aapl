@@ -33,7 +33,7 @@
               "name": "en",
               "label": "en",
               "ui": {
-                "component": "textarea"
+                "component": "text"
               }
             },
             {
@@ -41,7 +41,7 @@
               "name": "fr",
               "label": "fr",
               "ui": {
-                "component": "textarea"
+                "component": "text"
               }
             },
             {
@@ -49,7 +49,7 @@
               "name": "kor",
               "label": "kor",
               "ui": {
-                "component": "textarea"
+                "component": "text"
               }
             }
           ]
