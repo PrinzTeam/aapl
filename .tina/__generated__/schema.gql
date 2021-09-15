@@ -113,9 +113,55 @@ type HomeDescription {
   kor: String
 }
 
+type HomeDaysTitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDaysSubtitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDaysBodyTextTitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDaysBodyText {
+  title: HomeDaysBodyTextTitle
+}
+
+type HomeDaysBodyVideo {
+  vimeoUrl: String
+}
+
+type HomeDaysBodyImageCaption {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDaysBodyImage {
+  caption: HomeDaysBodyImageCaption
+  imageUrl: String
+}
+
+union HomeDaysBody = HomeDaysBodyText | HomeDaysBodyVideo | HomeDaysBodyImage
+
+type HomeDays {
+  title: HomeDaysTitle
+  subtitle: HomeDaysSubtitle
+  body: [HomeDaysBody]
+}
+
 type Home {
   mainTitle: HomeMainTitle
   description: HomeDescription
+  days: [HomeDays]
 }
 
 type HomeDocument implements Node & Document {
@@ -167,9 +213,59 @@ input HomeDescriptionMutation {
   kor: String
 }
 
+input HomeDaysTitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysSubtitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysBodyTextTitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysBodyTextMutation {
+  title: HomeDaysBodyTextTitleMutation
+}
+
+input HomeDaysBodyVideoMutation {
+  vimeoUrl: String
+}
+
+input HomeDaysBodyImageCaptionMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysBodyImageMutation {
+  caption: HomeDaysBodyImageCaptionMutation
+  imageUrl: String
+}
+
+input HomeDaysBodyMutation {
+  text: HomeDaysBodyTextMutation
+  video: HomeDaysBodyVideoMutation
+  image: HomeDaysBodyImageMutation
+}
+
+input HomeDaysMutation {
+  title: HomeDaysTitleMutation
+  subtitle: HomeDaysSubtitleMutation
+  body: [HomeDaysBodyMutation]
+}
+
 input HomeMutation {
   mainTitle: HomeMainTitleMutation
   description: HomeDescriptionMutation
+  days: [HomeDaysMutation]
 }
 
 schema {

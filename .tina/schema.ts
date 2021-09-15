@@ -1,8 +1,29 @@
 import { defineSchema } from "@tinacms/cli";
-const localizedString = [
-  { type: "string", name: "en", label: "en" },
-  { type: "string", name: "fr", label: "fr" },
-  { type: "string", name: "kor", label: "kor" },
+const localizedString = ({ textArea = false } = {}) => [
+  {
+    type: "string",
+    name: "en",
+    label: "en",
+    ui: {
+      component: textArea ? "textarea" : "text",
+    },
+  },
+  {
+    type: "string",
+    name: "fr",
+    label: "fr",
+    ui: {
+      component: textArea ? "textarea" : "text",
+    },
+  },
+  {
+    type: "string",
+    name: "kor",
+    label: "kor",
+    ui: {
+      component: textArea ? "textarea" : "text",
+    },
+  },
 ];
 export default defineSchema({
   collections: [
@@ -21,9 +42,6 @@ export default defineSchema({
           label: "Blog Post Body",
           name: "body",
           isBody: true,
-          ui: {
-            component: "textarea",
-          },
         },
       ],
     },
@@ -36,16 +54,73 @@ export default defineSchema({
           label: "Main Title",
           type: "object",
           name: "mainTitle",
-          fields: localizedString,
+          fields: localizedString({ textArea: true }),
         },
         {
           label: "ART-Talks description",
           type: "object",
           name: "description",
-          fields: localizedString,
-          ui: {
-            component: "textarea",
-          },
+          fields: localizedString({ textArea: true }),
+        },
+        {
+          label: "Days",
+          type: "object",
+          name: "days",
+          list: true,
+          fields: [
+            {
+              label: "Title",
+              name: "title",
+              type: "object",
+              fields: localizedString(),
+            },
+            {
+              label: "Subtitle",
+              name: "subtitle",
+              type: "object",
+              fields: localizedString(),
+            },
+            {
+              label: "Body",
+              name: "body",
+              type: "object",
+              list: true,
+              templates: [
+                {
+                  label: "Text section",
+                  name: "text",
+                  fields: [
+                    {
+                      label: "body",
+                      name: "title",
+                      type: "object",
+                      fields: localizedString(),
+                    },
+                  ],
+                },
+                {
+                  label: "Video section",
+                  name: "video",
+                  fields: [
+                    { label: "Vimeo Video", name: "vimeoUrl", type: "string" },
+                  ],
+                },
+                {
+                  label: "Image",
+                  name: "image",
+                  fields: [
+                    {
+                      label: "Caption",
+                      name: "caption",
+                      type: "object",
+                      fields: localizedString(),
+                    },
+                    { label: "Image", name: "imageUrl", type: "image" },
+                  ],
+                },
+              ],
+            },
+          ],
         },
       ],
     },

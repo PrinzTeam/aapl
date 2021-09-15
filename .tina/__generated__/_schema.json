@@ -19,9 +19,6 @@
           "label": "Blog Post Body",
           "name": "body",
           "isBody": true,
-          "ui": {
-            "component": "textarea"
-          },
           "namespace": [
             "posts",
             "body"
@@ -46,6 +43,9 @@
               "type": "string",
               "name": "en",
               "label": "en",
+              "ui": {
+                "component": "textarea"
+              },
               "namespace": [
                 "home",
                 "mainTitle",
@@ -56,6 +56,9 @@
               "type": "string",
               "name": "fr",
               "label": "fr",
+              "ui": {
+                "component": "textarea"
+              },
               "namespace": [
                 "home",
                 "mainTitle",
@@ -66,6 +69,9 @@
               "type": "string",
               "name": "kor",
               "label": "kor",
+              "ui": {
+                "component": "textarea"
+              },
               "namespace": [
                 "home",
                 "mainTitle",
@@ -87,6 +93,9 @@
               "type": "string",
               "name": "en",
               "label": "en",
+              "ui": {
+                "component": "textarea"
+              },
               "namespace": [
                 "home",
                 "description",
@@ -97,6 +106,9 @@
               "type": "string",
               "name": "fr",
               "label": "fr",
+              "ui": {
+                "component": "textarea"
+              },
               "namespace": [
                 "home",
                 "description",
@@ -107,6 +119,9 @@
               "type": "string",
               "name": "kor",
               "label": "kor",
+              "ui": {
+                "component": "textarea"
+              },
               "namespace": [
                 "home",
                 "description",
@@ -114,12 +129,326 @@
               ]
             }
           ],
-          "ui": {
-            "component": "textarea"
-          },
           "namespace": [
             "home",
             "description"
+          ]
+        },
+        {
+          "label": "Days",
+          "type": "object",
+          "name": "days",
+          "list": true,
+          "fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "home",
+                    "days",
+                    "title",
+                    "en"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "home",
+                    "days",
+                    "title",
+                    "fr"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "home",
+                    "days",
+                    "title",
+                    "kor"
+                  ]
+                }
+              ],
+              "namespace": [
+                "home",
+                "days",
+                "title"
+              ]
+            },
+            {
+              "label": "Subtitle",
+              "name": "subtitle",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "home",
+                    "days",
+                    "subtitle",
+                    "en"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "home",
+                    "days",
+                    "subtitle",
+                    "fr"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  },
+                  "namespace": [
+                    "home",
+                    "days",
+                    "subtitle",
+                    "kor"
+                  ]
+                }
+              ],
+              "namespace": [
+                "home",
+                "days",
+                "subtitle"
+              ]
+            },
+            {
+              "label": "Body",
+              "name": "body",
+              "type": "object",
+              "list": true,
+              "templates": [
+                {
+                  "label": "Text section",
+                  "name": "text",
+                  "fields": [
+                    {
+                      "label": "body",
+                      "name": "title",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "en",
+                          "label": "en",
+                          "ui": {
+                            "component": "text"
+                          },
+                          "namespace": [
+                            "home",
+                            "days",
+                            "body",
+                            "text",
+                            "title",
+                            "en"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "fr",
+                          "label": "fr",
+                          "ui": {
+                            "component": "text"
+                          },
+                          "namespace": [
+                            "home",
+                            "days",
+                            "body",
+                            "text",
+                            "title",
+                            "fr"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "kor",
+                          "label": "kor",
+                          "ui": {
+                            "component": "text"
+                          },
+                          "namespace": [
+                            "home",
+                            "days",
+                            "body",
+                            "text",
+                            "title",
+                            "kor"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "home",
+                        "days",
+                        "body",
+                        "text",
+                        "title"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "home",
+                    "days",
+                    "body",
+                    "text"
+                  ]
+                },
+                {
+                  "label": "Video section",
+                  "name": "video",
+                  "fields": [
+                    {
+                      "label": "Vimeo Video",
+                      "name": "vimeoUrl",
+                      "type": "string",
+                      "namespace": [
+                        "home",
+                        "days",
+                        "body",
+                        "video",
+                        "vimeoUrl"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "home",
+                    "days",
+                    "body",
+                    "video"
+                  ]
+                },
+                {
+                  "label": "Image",
+                  "name": "image",
+                  "fields": [
+                    {
+                      "label": "Caption",
+                      "name": "caption",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "en",
+                          "label": "en",
+                          "ui": {
+                            "component": "text"
+                          },
+                          "namespace": [
+                            "home",
+                            "days",
+                            "body",
+                            "image",
+                            "caption",
+                            "en"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "fr",
+                          "label": "fr",
+                          "ui": {
+                            "component": "text"
+                          },
+                          "namespace": [
+                            "home",
+                            "days",
+                            "body",
+                            "image",
+                            "caption",
+                            "fr"
+                          ]
+                        },
+                        {
+                          "type": "string",
+                          "name": "kor",
+                          "label": "kor",
+                          "ui": {
+                            "component": "text"
+                          },
+                          "namespace": [
+                            "home",
+                            "days",
+                            "body",
+                            "image",
+                            "caption",
+                            "kor"
+                          ]
+                        }
+                      ],
+                      "namespace": [
+                        "home",
+                        "days",
+                        "body",
+                        "image",
+                        "caption"
+                      ]
+                    },
+                    {
+                      "label": "Image",
+                      "name": "imageUrl",
+                      "type": "image",
+                      "namespace": [
+                        "home",
+                        "days",
+                        "body",
+                        "image",
+                        "imageUrl"
+                      ]
+                    }
+                  ],
+                  "namespace": [
+                    "home",
+                    "days",
+                    "body",
+                    "image"
+                  ]
+                }
+              ],
+              "namespace": [
+                "home",
+                "days",
+                "body"
+              ]
+            }
+          ],
+          "namespace": [
+            "home",
+            "days"
           ]
         }
       ],

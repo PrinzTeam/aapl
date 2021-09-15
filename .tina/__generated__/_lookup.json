@@ -34,5 +34,52 @@
     "type": "HomeConnection",
     "resolveType": "collectionDocumentList",
     "collection": "home"
+  },
+  "DaysDocument": {
+    "type": "DaysDocument",
+    "resolveType": "collectionDocument",
+    "collection": "days"
+  },
+  "DaysConnection": {
+    "type": "DaysConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "days"
+  },
+  "HomeDaysADayBody": {
+    "type": "HomeDaysADayBody",
+    "resolveType": "unionData",
+    "typeMap": {
+      "body": "HomeDaysADayBodyBody"
+    }
+  },
+  "HomeDaysADayContent": {
+    "type": "HomeDaysADayContent",
+    "resolveType": "unionData",
+    "typeMap": {
+      "hero": "HomeDaysADayContentHero"
+    }
+  },
+  "HomeDaysADayPageSections": {
+    "type": "HomeDaysADayPageSections",
+    "resolveType": "unionData",
+    "typeMap": {
+      "hero": "HomeDaysADayPageSectionsHero"
+    }
+  },
+  "HomeDaysADay": {
+    "type": "HomeDaysADay",
+    "resolveType": "unionData",
+    "typeMap": {
+      "hero": "HomeDaysADayHero"
+    }
+  },
+  "HomeDaysBody": {
+    "type": "HomeDaysBody",
+    "resolveType": "unionData",
+    "typeMap": {
+      "text": "HomeDaysBodyText",
+      "video": "HomeDaysBodyVideo",
+      "image": "HomeDaysBodyImage"
+    }
   }
 }

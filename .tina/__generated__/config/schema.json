@@ -14,10 +14,7 @@
           "type": "string",
           "label": "Blog Post Body",
           "name": "body",
-          "isBody": true,
-          "ui": {
-            "component": "textarea"
-          }
+          "isBody": true
         }
       ]
     },
@@ -34,17 +31,26 @@
             {
               "type": "string",
               "name": "en",
-              "label": "en"
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              }
             },
             {
               "type": "string",
               "name": "fr",
-              "label": "fr"
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              }
             },
             {
               "type": "string",
               "name": "kor",
-              "label": "kor"
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              }
             }
           ]
         },
@@ -56,22 +62,196 @@
             {
               "type": "string",
               "name": "en",
-              "label": "en"
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              }
             },
             {
               "type": "string",
               "name": "fr",
-              "label": "fr"
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              }
             },
             {
               "type": "string",
               "name": "kor",
-              "label": "kor"
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              }
             }
-          ],
-          "ui": {
-            "component": "textarea"
-          }
+          ]
+        },
+        {
+          "label": "Days",
+          "type": "object",
+          "name": "days",
+          "list": true,
+          "fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Subtitle",
+              "name": "subtitle",
+              "type": "object",
+              "fields": [
+                {
+                  "type": "string",
+                  "name": "en",
+                  "label": "en",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "fr",
+                  "label": "fr",
+                  "ui": {
+                    "component": "text"
+                  }
+                },
+                {
+                  "type": "string",
+                  "name": "kor",
+                  "label": "kor",
+                  "ui": {
+                    "component": "text"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Body",
+              "name": "body",
+              "type": "object",
+              "list": true,
+              "templates": [
+                {
+                  "label": "Text section",
+                  "name": "text",
+                  "fields": [
+                    {
+                      "label": "body",
+                      "name": "title",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "en",
+                          "label": "en",
+                          "ui": {
+                            "component": "text"
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "fr",
+                          "label": "fr",
+                          "ui": {
+                            "component": "text"
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "kor",
+                          "label": "kor",
+                          "ui": {
+                            "component": "text"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "Video section",
+                  "name": "video",
+                  "fields": [
+                    {
+                      "label": "Vimeo Video",
+                      "name": "vimeoUrl",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "label": "Image",
+                  "name": "image",
+                  "fields": [
+                    {
+                      "label": "Caption",
+                      "name": "caption",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "type": "string",
+                          "name": "en",
+                          "label": "en",
+                          "ui": {
+                            "component": "text"
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "fr",
+                          "label": "fr",
+                          "ui": {
+                            "component": "text"
+                          }
+                        },
+                        {
+                          "type": "string",
+                          "name": "kor",
+                          "label": "kor",
+                          "ui": {
+                            "component": "text"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Image",
+                      "name": "imageUrl",
+                      "type": "image"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
