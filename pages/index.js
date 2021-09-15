@@ -14,3 +14,5 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ params }) => {};

@@ -65,6 +65,8 @@ export type Query = {
   getDocumentList: DocumentConnection;
   getPostsDocument: PostsDocument;
   getPostsList: PostsConnection;
+  getHomeDocument: HomeDocument;
+  getHomeList: HomeConnection;
 };
 
 
@@ -98,6 +100,19 @@ export type QueryGetPostsDocumentArgs = {
 
 
 export type QueryGetPostsListArgs = {
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryGetHomeDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryGetHomeListArgs = {
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
@@ -138,7 +153,7 @@ export type CollectionDocumentsArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PostsDocument;
+export type DocumentNode = PostsDocument | HomeDocument;
 
 export type Posts = {
   __typename?: 'Posts';
@@ -169,11 +184,55 @@ export type PostsConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
 };
 
+export type HomeMainTitle = {
+  __typename?: 'HomeMainTitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDescription = {
+  __typename?: 'HomeDescription';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type Home = {
+  __typename?: 'Home';
+  mainTitle?: Maybe<HomeMainTitle>;
+  description?: Maybe<HomeDescription>;
+};
+
+export type HomeDocument = Node & Document & {
+  __typename?: 'HomeDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: Home;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type HomeConnectionEdges = {
+  __typename?: 'HomeConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<HomeDocument>;
+};
+
+export type HomeConnection = Connection & {
+  __typename?: 'HomeConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<HomeConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
   updateDocument: DocumentNode;
   updatePostsDocument: PostsDocument;
+  updateHomeDocument: HomeDocument;
 };
 
 
@@ -196,12 +255,36 @@ export type MutationUpdatePostsDocumentArgs = {
   params: PostsMutation;
 };
 
+
+export type MutationUpdateHomeDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: HomeMutation;
+};
+
 export type DocumentMutation = {
   posts?: Maybe<PostsMutation>;
+  home?: Maybe<HomeMutation>;
 };
 
 export type PostsMutation = {
   title?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
+};
+
+export type HomeMainTitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDescriptionMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeMutation = {
+  mainTitle?: Maybe<HomeMainTitleMutation>;
+  description?: Maybe<HomeDescriptionMutation>;
 };
 

@@ -31,6 +31,101 @@
       "namespace": [
         "posts"
       ]
+    },
+    {
+      "label": "Home Page",
+      "name": "home",
+      "path": "content/pages",
+      "fields": [
+        {
+          "label": "Main Title",
+          "type": "object",
+          "name": "mainTitle",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "namespace": [
+                "home",
+                "mainTitle",
+                "en"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "namespace": [
+                "home",
+                "mainTitle",
+                "fr"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "namespace": [
+                "home",
+                "mainTitle",
+                "kor"
+              ]
+            }
+          ],
+          "namespace": [
+            "home",
+            "mainTitle"
+          ]
+        },
+        {
+          "label": "ART-Talks description",
+          "type": "object",
+          "name": "description",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "namespace": [
+                "home",
+                "description",
+                "en"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "namespace": [
+                "home",
+                "description",
+                "fr"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "namespace": [
+                "home",
+                "description",
+                "kor"
+              ]
+            }
+          ],
+          "ui": {
+            "component": "textarea"
+          },
+          "namespace": [
+            "home",
+            "description"
+          ]
+        }
+      ],
+      "namespace": [
+        "home"
+      ]
     }
   ],
   "namespace": []

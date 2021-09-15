@@ -3,7 +3,8 @@
     "type": "DocumentConnection",
     "resolveType": "multiCollectionDocumentList",
     "collections": [
-      "posts"
+      "posts",
+      "home"
     ]
   },
   "Node": {
@@ -23,5 +24,15 @@
     "type": "PostsConnection",
     "resolveType": "collectionDocumentList",
     "collection": "posts"
+  },
+  "HomeDocument": {
+    "type": "HomeDocument",
+    "resolveType": "collectionDocument",
+    "collection": "home"
+  },
+  "HomeConnection": {
+    "type": "HomeConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "home"
   }
 }

@@ -20,6 +20,60 @@
           }
         }
       ]
+    },
+    {
+      "label": "Home Page",
+      "name": "home",
+      "path": "content/pages",
+      "fields": [
+        {
+          "label": "Main Title",
+          "type": "object",
+          "name": "mainTitle",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en"
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr"
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor"
+            }
+          ]
+        },
+        {
+          "label": "ART-Talks description",
+          "type": "object",
+          "name": "description",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en"
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr"
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor"
+            }
+          ],
+          "ui": {
+            "component": "textarea"
+          }
+        }
+      ]
     }
   ]
 }
