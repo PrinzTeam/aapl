@@ -4,8 +4,8 @@
     "resolveType": "multiCollectionDocumentList",
     "collections": [
       "posts",
-      "home",
-      "arttalks"
+      "arttalks",
+      "home"
     ]
   },
   "Node": {

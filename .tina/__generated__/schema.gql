@@ -47,10 +47,10 @@ type Query {
   getDocumentList(before: String, after: String, first: Int, last: Int): DocumentConnection!
   getPostsDocument(relativePath: String): PostsDocument!
   getPostsList(before: String, after: String, first: Int, last: Int): PostsConnection!
-  getHomeDocument(relativePath: String): HomeDocument!
-  getHomeList(before: String, after: String, first: Int, last: Int): HomeConnection!
   getArttalksDocument(relativePath: String): ArttalksDocument!
   getArttalksList(before: String, after: String, first: Int, last: Int): ArttalksConnection!
+  getHomeDocument(relativePath: String): HomeDocument!
+  getHomeList(before: String, after: String, first: Int, last: Int): HomeConnection!
 }
 
 type DocumentConnectionEdges {
@@ -76,7 +76,7 @@ type Collection {
   documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument | HomeDocument | ArttalksDocument
+union DocumentNode = PostsDocument | ArttalksDocument | HomeDocument
 
 type Posts {
   title: String
@@ -101,54 +101,6 @@ type PostsConnection implements Connection {
   pageInfo: PageInfo
   totalCount: Int!
   edges: [PostsConnectionEdges]
-}
-
-type HomeDescription {
-  en: String
-  fr: String
-  kor: String
-}
-
-type HomeDaysTitle {
-  en: String
-  fr: String
-  kor: String
-}
-
-type HomeDaysSubtitle {
-  en: String
-  fr: String
-  kor: String
-}
-
-type HomeDays {
-  title: HomeDaysTitle
-  subtitle: HomeDaysSubtitle
-}
-
-type Home {
-  description: HomeDescription
-  days: [HomeDays]
-}
-
-type HomeDocument implements Node & Document {
-  id: ID!
-  sys: SystemInfo!
-  data: Home!
-  form: JSON!
-  values: JSON!
-  dataJSON: JSON!
-}
-
-type HomeConnectionEdges {
-  cursor: String
-  node: HomeDocument
-}
-
-type HomeConnection implements Connection {
-  pageInfo: PageInfo
-  totalCount: Int!
-  edges: [HomeConnectionEdges]
 }
 
 type ArttalksMainTitle {
@@ -234,51 +186,71 @@ type ArttalksConnection implements Connection {
   edges: [ArttalksConnectionEdges]
 }
 
+type HomeDescription {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDaysTitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDaysSubtitle {
+  en: String
+  fr: String
+  kor: String
+}
+
+type HomeDays {
+  title: HomeDaysTitle
+  subtitle: HomeDaysSubtitle
+}
+
+type Home {
+  description: HomeDescription
+  days: [HomeDays]
+}
+
+type HomeDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: Home!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type HomeConnectionEdges {
+  cursor: String
+  node: HomeDocument
+}
+
+type HomeConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Int!
+  edges: [HomeConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String!, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
-  updateHomeDocument(relativePath: String!, params: HomeMutation!): HomeDocument!
   updateArttalksDocument(relativePath: String!, params: ArttalksMutation!): ArttalksDocument!
+  updateHomeDocument(relativePath: String!, params: HomeMutation!): HomeDocument!
 }
 
 input DocumentMutation {
   posts: PostsMutation
-  home: HomeMutation
   arttalks: ArttalksMutation
+  home: HomeMutation
 }
 
 input PostsMutation {
   title: String
   body: String
-}
-
-input HomeDescriptionMutation {
-  en: String
-  fr: String
-  kor: String
-}
-
-input HomeDaysTitleMutation {
-  en: String
-  fr: String
-  kor: String
-}
-
-input HomeDaysSubtitleMutation {
-  en: String
-  fr: String
-  kor: String
-}
-
-input HomeDaysMutation {
-  title: HomeDaysTitleMutation
-  subtitle: HomeDaysSubtitleMutation
-}
-
-input HomeMutation {
-  description: HomeDescriptionMutation
-  days: [HomeDaysMutation]
 }
 
 input ArttalksMainTitleMutation {
@@ -346,6 +318,34 @@ input ArttalksMutation {
   mainTitle: ArttalksMainTitleMutation
   description: ArttalksDescriptionMutation
   days: [ArttalksDaysMutation]
+}
+
+input HomeDescriptionMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysTitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysSubtitleMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input HomeDaysMutation {
+  title: HomeDaysTitleMutation
+  subtitle: HomeDaysSubtitleMutation
+}
+
+input HomeMutation {
+  description: HomeDescriptionMutation
+  days: [HomeDaysMutation]
 }
 
 schema {

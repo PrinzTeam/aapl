@@ -33,11 +33,10 @@ export default function ARTTalks(props) {
                 <details className="text-6xl cursor-pointer">
                   <summary className="list-none pl-5 py-10 text-white bg-gray-500">
                     <span className="font-bold">
-                      {day.title[locale || "en"]}{" "}
+                      {day.title[locale || "en"]}
                     </span>
                     :
                     <span className="font-normal">
-                      {" "}
                       {day?.subtitle[locale || "en"]}
                     </span>
                   </summary>
@@ -59,8 +58,8 @@ export default function ARTTalks(props) {
 export const getStaticProps = async () => {
   const tinaProps = await getStaticPropsForTina({
     query: `
-    query {
-      getArttalksDocument(relativePath: "arttalks.json") {
+    query($relativePath: String!) {
+      getArttalksDocument(relativePath: $relativePath) {
         data {
           mainTitle {
             en
@@ -107,9 +106,11 @@ export const getStaticProps = async () => {
           }
         }
       }
-    }
+    }    
   `,
+    variables: { relativePath: "arttalks.json" },
   });
+  console.log({ ...tinaProps.data.getArttalksDocument.data });
   return {
     props: {
       ...tinaProps,

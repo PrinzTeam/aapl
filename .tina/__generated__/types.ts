@@ -65,10 +65,10 @@ export type Query = {
   getDocumentList: DocumentConnection;
   getPostsDocument: PostsDocument;
   getPostsList: PostsConnection;
-  getHomeDocument: HomeDocument;
-  getHomeList: HomeConnection;
   getArttalksDocument: ArttalksDocument;
   getArttalksList: ArttalksConnection;
+  getHomeDocument: HomeDocument;
+  getHomeList: HomeConnection;
 };
 
 
@@ -109,12 +109,12 @@ export type QueryGetPostsListArgs = {
 };
 
 
-export type QueryGetHomeDocumentArgs = {
+export type QueryGetArttalksDocumentArgs = {
   relativePath?: Maybe<Scalars['String']>;
 };
 
 
-export type QueryGetHomeListArgs = {
+export type QueryGetArttalksListArgs = {
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
@@ -122,12 +122,12 @@ export type QueryGetHomeListArgs = {
 };
 
 
-export type QueryGetArttalksDocumentArgs = {
+export type QueryGetHomeDocumentArgs = {
   relativePath?: Maybe<Scalars['String']>;
 };
 
 
-export type QueryGetArttalksListArgs = {
+export type QueryGetHomeListArgs = {
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
@@ -168,7 +168,7 @@ export type CollectionDocumentsArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PostsDocument | HomeDocument | ArttalksDocument;
+export type DocumentNode = PostsDocument | ArttalksDocument | HomeDocument;
 
 export type Posts = {
   __typename?: 'Posts';
@@ -197,62 +197,6 @@ export type PostsConnection = Connection & {
   pageInfo?: Maybe<PageInfo>;
   totalCount: Scalars['Int'];
   edges?: Maybe<Array<Maybe<PostsConnectionEdges>>>;
-};
-
-export type HomeDescription = {
-  __typename?: 'HomeDescription';
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysTitle = {
-  __typename?: 'HomeDaysTitle';
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysSubtitle = {
-  __typename?: 'HomeDaysSubtitle';
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDays = {
-  __typename?: 'HomeDays';
-  title?: Maybe<HomeDaysTitle>;
-  subtitle?: Maybe<HomeDaysSubtitle>;
-};
-
-export type Home = {
-  __typename?: 'Home';
-  description?: Maybe<HomeDescription>;
-  days?: Maybe<Array<Maybe<HomeDays>>>;
-};
-
-export type HomeDocument = Node & Document & {
-  __typename?: 'HomeDocument';
-  id: Scalars['ID'];
-  sys: SystemInfo;
-  data: Home;
-  form: Scalars['JSON'];
-  values: Scalars['JSON'];
-  dataJSON: Scalars['JSON'];
-};
-
-export type HomeConnectionEdges = {
-  __typename?: 'HomeConnectionEdges';
-  cursor?: Maybe<Scalars['String']>;
-  node?: Maybe<HomeDocument>;
-};
-
-export type HomeConnection = Connection & {
-  __typename?: 'HomeConnection';
-  pageInfo?: Maybe<PageInfo>;
-  totalCount: Scalars['Int'];
-  edges?: Maybe<Array<Maybe<HomeConnectionEdges>>>;
 };
 
 export type ArttalksMainTitle = {
@@ -352,13 +296,69 @@ export type ArttalksConnection = Connection & {
   edges?: Maybe<Array<Maybe<ArttalksConnectionEdges>>>;
 };
 
+export type HomeDescription = {
+  __typename?: 'HomeDescription';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDaysTitle = {
+  __typename?: 'HomeDaysTitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDaysSubtitle = {
+  __typename?: 'HomeDaysSubtitle';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDays = {
+  __typename?: 'HomeDays';
+  title?: Maybe<HomeDaysTitle>;
+  subtitle?: Maybe<HomeDaysSubtitle>;
+};
+
+export type Home = {
+  __typename?: 'Home';
+  description?: Maybe<HomeDescription>;
+  days?: Maybe<Array<Maybe<HomeDays>>>;
+};
+
+export type HomeDocument = Node & Document & {
+  __typename?: 'HomeDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: Home;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type HomeConnectionEdges = {
+  __typename?: 'HomeConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<HomeDocument>;
+};
+
+export type HomeConnection = Connection & {
+  __typename?: 'HomeConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<HomeConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
   updateDocument: DocumentNode;
   updatePostsDocument: PostsDocument;
-  updateHomeDocument: HomeDocument;
   updateArttalksDocument: ArttalksDocument;
+  updateHomeDocument: HomeDocument;
 };
 
 
@@ -382,54 +382,26 @@ export type MutationUpdatePostsDocumentArgs = {
 };
 
 
-export type MutationUpdateHomeDocumentArgs = {
-  relativePath: Scalars['String'];
-  params: HomeMutation;
-};
-
-
 export type MutationUpdateArttalksDocumentArgs = {
   relativePath: Scalars['String'];
   params: ArttalksMutation;
 };
 
+
+export type MutationUpdateHomeDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: HomeMutation;
+};
+
 export type DocumentMutation = {
   posts?: Maybe<PostsMutation>;
-  home?: Maybe<HomeMutation>;
   arttalks?: Maybe<ArttalksMutation>;
+  home?: Maybe<HomeMutation>;
 };
 
 export type PostsMutation = {
   title?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
-};
-
-export type HomeDescriptionMutation = {
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysTitleMutation = {
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysSubtitleMutation = {
-  en?: Maybe<Scalars['String']>;
-  fr?: Maybe<Scalars['String']>;
-  kor?: Maybe<Scalars['String']>;
-};
-
-export type HomeDaysMutation = {
-  title?: Maybe<HomeDaysTitleMutation>;
-  subtitle?: Maybe<HomeDaysSubtitleMutation>;
-};
-
-export type HomeMutation = {
-  description?: Maybe<HomeDescriptionMutation>;
-  days?: Maybe<Array<Maybe<HomeDaysMutation>>>;
 };
 
 export type ArttalksMainTitleMutation = {
@@ -497,5 +469,33 @@ export type ArttalksMutation = {
   mainTitle?: Maybe<ArttalksMainTitleMutation>;
   description?: Maybe<ArttalksDescriptionMutation>;
   days?: Maybe<Array<Maybe<ArttalksDaysMutation>>>;
+};
+
+export type HomeDescriptionMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDaysTitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDaysSubtitleMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type HomeDaysMutation = {
+  title?: Maybe<HomeDaysTitleMutation>;
+  subtitle?: Maybe<HomeDaysSubtitleMutation>;
+};
+
+export type HomeMutation = {
+  description?: Maybe<HomeDescriptionMutation>;
+  days?: Maybe<Array<Maybe<HomeDaysMutation>>>;
 };
 
