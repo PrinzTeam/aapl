@@ -173,7 +173,7 @@
                           "name": "en",
                           "label": "en",
                           "ui": {
-                            "component": "text"
+                            "component": "textarea"
                           }
                         },
                         {
@@ -181,7 +181,7 @@
                           "name": "fr",
                           "label": "fr",
                           "ui": {
-                            "component": "text"
+                            "component": "textarea"
                           }
                         },
                         {
@@ -189,7 +189,7 @@
                           "name": "kor",
                           "label": "kor",
                           "ui": {
-                            "component": "text"
+                            "component": "textarea"
                           }
                         }
                       ]

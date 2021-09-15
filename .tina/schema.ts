@@ -94,7 +94,7 @@ export default defineSchema({
                       label: "body",
                       name: "title",
                       type: "object",
-                      fields: localizedString(),
+                      fields: localizedString({ textArea: true }),
                     },
                   ],
                 },
