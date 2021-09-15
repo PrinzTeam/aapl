@@ -6,7 +6,6 @@ import TemplateRenderer from "../components/TemplateRenderer";
 
 export default function Home(props) {
   const { locale } = useRouter();
-  console.log(props?.data?.getHomeDocument?.data?.days);
   return (
     <Layout>
       <main>
