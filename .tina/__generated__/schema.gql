@@ -51,6 +51,8 @@ type Query {
   getArttalksList(before: String, after: String, first: Int, last: Int): ArttalksConnection!
   getHomeDocument(relativePath: String): HomeDocument!
   getHomeList(before: String, after: String, first: Int, last: Int): HomeConnection!
+  getAboutDocument(relativePath: String): AboutDocument!
+  getAboutList(before: String, after: String, first: Int, last: Int): AboutConnection!
 }
 
 type DocumentConnectionEdges {
@@ -76,7 +78,7 @@ type Collection {
   documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument | ArttalksDocument | HomeDocument
+union DocumentNode = PostsDocument | ArttalksDocument | HomeDocument | AboutDocument
 
 type Posts {
   title: String
@@ -234,18 +236,50 @@ type HomeConnection implements Connection {
   edges: [HomeConnectionEdges]
 }
 
+type AboutContent {
+  en: String
+  fr: String
+  kor: String
+}
+
+type About {
+  content: AboutContent
+}
+
+type AboutDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: About!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type AboutConnectionEdges {
+  cursor: String
+  node: AboutDocument
+}
+
+type AboutConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Int!
+  edges: [AboutConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String!, relativePath: String!, params: DocumentMutation!): DocumentNode!
   updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
   updateArttalksDocument(relativePath: String!, params: ArttalksMutation!): ArttalksDocument!
   updateHomeDocument(relativePath: String!, params: HomeMutation!): HomeDocument!
+  updateAboutDocument(relativePath: String!, params: AboutMutation!): AboutDocument!
 }
 
 input DocumentMutation {
   posts: PostsMutation
   arttalks: ArttalksMutation
   home: HomeMutation
+  about: AboutMutation
 }
 
 input PostsMutation {
@@ -346,6 +380,16 @@ input HomeDaysMutation {
 input HomeMutation {
   description: HomeDescriptionMutation
   days: [HomeDaysMutation]
+}
+
+input AboutContentMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input AboutMutation {
+  content: AboutContentMutation
 }
 
 schema {

@@ -69,6 +69,8 @@ export type Query = {
   getArttalksList: ArttalksConnection;
   getHomeDocument: HomeDocument;
   getHomeList: HomeConnection;
+  getAboutDocument: AboutDocument;
+  getAboutList: AboutConnection;
 };
 
 
@@ -134,6 +136,19 @@ export type QueryGetHomeListArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
+
+export type QueryGetAboutDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryGetAboutListArgs = {
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
 export type DocumentConnectionEdges = {
   __typename?: 'DocumentConnectionEdges';
   cursor?: Maybe<Scalars['String']>;
@@ -168,7 +183,7 @@ export type CollectionDocumentsArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PostsDocument | ArttalksDocument | HomeDocument;
+export type DocumentNode = PostsDocument | ArttalksDocument | HomeDocument | AboutDocument;
 
 export type Posts = {
   __typename?: 'Posts';
@@ -352,6 +367,41 @@ export type HomeConnection = Connection & {
   edges?: Maybe<Array<Maybe<HomeConnectionEdges>>>;
 };
 
+export type AboutContent = {
+  __typename?: 'AboutContent';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type About = {
+  __typename?: 'About';
+  content?: Maybe<AboutContent>;
+};
+
+export type AboutDocument = Node & Document & {
+  __typename?: 'AboutDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: About;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type AboutConnectionEdges = {
+  __typename?: 'AboutConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<AboutDocument>;
+};
+
+export type AboutConnection = Connection & {
+  __typename?: 'AboutConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<AboutConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -359,6 +409,7 @@ export type Mutation = {
   updatePostsDocument: PostsDocument;
   updateArttalksDocument: ArttalksDocument;
   updateHomeDocument: HomeDocument;
+  updateAboutDocument: AboutDocument;
 };
 
 
@@ -393,10 +444,17 @@ export type MutationUpdateHomeDocumentArgs = {
   params: HomeMutation;
 };
 
+
+export type MutationUpdateAboutDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: AboutMutation;
+};
+
 export type DocumentMutation = {
   posts?: Maybe<PostsMutation>;
   arttalks?: Maybe<ArttalksMutation>;
   home?: Maybe<HomeMutation>;
+  about?: Maybe<AboutMutation>;
 };
 
 export type PostsMutation = {
@@ -497,5 +555,15 @@ export type HomeDaysMutation = {
 export type HomeMutation = {
   description?: Maybe<HomeDescriptionMutation>;
   days?: Maybe<Array<Maybe<HomeDaysMutation>>>;
+};
+
+export type AboutContentMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type AboutMutation = {
+  content?: Maybe<AboutContentMutation>;
 };
 

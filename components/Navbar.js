@@ -15,10 +15,11 @@ const Navbar = () => {
             ART-Talks
           </li>
         </Link>
-
-        <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  cursor-pointer">
-          About
-        </li>
+        <Link href="/about" passHref>
+          <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  cursor-pointer">
+            About
+          </li>
+        </Link>
         <a
           href="https://koreanfilm.ca/archives/art-talks/2020"
           target="_blank"

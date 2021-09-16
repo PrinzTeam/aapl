@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { TinaEditProvider } from "tinacms/dist/edit-state";
 const TinaCMS = dynamic(() => import("tinacms"), { ssr: false });
+import { MarkdownFieldPlugin, HtmlFieldPlugin } from "react-tinacms-editor";
 import "tailwindcss/tailwind.css";
 
 const App = ({ Component, pageProps }) => {
@@ -15,13 +16,9 @@ const App = ({ Component, pageProps }) => {
             isLocalClient={Boolean(
               Number(process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT ?? true)
             )}
-            formifyCallback={({ formConfig, createForm, createGlobalForm }) => {
-              if (formConfig.id === "getGlobalDocument") {
-                return createGlobalForm(formConfig);
-              }
-              console.log(formConfig);
-              // formConfig.id = "";
-              return createForm(formConfig);
+            cmsCallback={(cms) => {
+              cms.plugins.add(HtmlFieldPlugin);
+              cms.plugins.add(MarkdownFieldPlugin);
             }}
             {...pageProps}
           >

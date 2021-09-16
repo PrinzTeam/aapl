@@ -635,6 +635,66 @@
       "namespace": [
         "home"
       ]
+    },
+    {
+      "label": "About",
+      "name": "about",
+      "path": "content/about",
+      "fields": [
+        {
+          "label": "Content",
+          "name": "content",
+          "type": "object",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "ui": {
+                "component": "html"
+              },
+              "namespace": [
+                "about",
+                "content",
+                "en"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "ui": {
+                "component": "html"
+              },
+              "namespace": [
+                "about",
+                "content",
+                "fr"
+              ]
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "ui": {
+                "component": "html"
+              },
+              "namespace": [
+                "about",
+                "content",
+                "kor"
+              ]
+            }
+          ],
+          "namespace": [
+            "about",
+            "content"
+          ]
+        }
+      ],
+      "namespace": [
+        "about"
+      ]
     }
   ],
   "namespace": []

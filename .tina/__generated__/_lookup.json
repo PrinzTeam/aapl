@@ -5,7 +5,8 @@
     "collections": [
       "posts",
       "arttalks",
-      "home"
+      "home",
+      "about"
     ]
   },
   "Node": {
@@ -101,5 +102,15 @@
     "type": "ArttalksConnection",
     "resolveType": "collectionDocumentList",
     "collection": "arttalks"
+  },
+  "AboutDocument": {
+    "type": "AboutDocument",
+    "resolveType": "collectionDocument",
+    "collection": "about"
+  },
+  "AboutConnection": {
+    "type": "AboutConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "about"
   }
 }

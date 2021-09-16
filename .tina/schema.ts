@@ -157,5 +157,44 @@ export default defineSchema({
         },
       ],
     },
+    {
+      label: "About",
+      name: "about",
+      path: "content/about",
+      fields: [
+        {
+          label: "Content",
+          name: "content",
+          type: "object",
+
+          fields: [
+            {
+              type: "string",
+              name: "en",
+              label: "en",
+              ui: {
+                component: "html",
+              },
+            },
+            {
+              type: "string",
+              name: "fr",
+              label: "fr",
+              ui: {
+                component: "html",
+              },
+            },
+            {
+              type: "string",
+              name: "kor",
+              label: "kor",
+              ui: {
+                component: "html",
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
 });

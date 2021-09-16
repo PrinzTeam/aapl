@@ -14,7 +14,7 @@ export default function Home(props) {
           <h2 className="uppercase text-gray-400 font-bold text-6xl">
             ART-Talks
           </h2>
-          <p className="mt-10">
+          <p className="text-2xl mt-10">
             {props?.data?.getHomeDocument?.data?.description[locale || "en"]}
           </p>
         </section>

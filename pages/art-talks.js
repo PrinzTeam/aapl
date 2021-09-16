@@ -6,11 +6,10 @@ import TemplateRenderer from "../components/TemplateRenderer";
 
 export default function ARTTalks(props) {
   const { locale } = useRouter();
-  console.log(props);
   return (
     <Layout>
       <main>
-        <section className="bg-aapl-red mt-5">
+        <section className="bg-aapl-red mt-32">
           <h1 className="text-center text-5xl py-5 px-5 text-gray-50">
             {props.data?.getArttalksDocument?.data?.mainTitle?.[locale || "en"]}
           </h1>
