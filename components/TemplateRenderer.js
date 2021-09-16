@@ -6,13 +6,13 @@ const TemplateRenderer = ({ component }) => {
   const { __typename } = component;
   console.log({ component, __typename });
   switch (__typename) {
-    case "HomeDaysBodyText":
+    case "ArttalksDaysBodyText":
       const { title } = component;
       return <h1>{title[locale || "en"]}</h1>;
-    case "HomeDaysBodyVideo":
+    case "ArttalksDaysBodyVideo":
       const { vimeoUrl } = component;
       return <h1>{vimeoUrl}</h1>;
-    case "HomeDaysBodyImage":
+    case "ArttalksDaysBodyImage":
       const { caption, imageUrl } = component;
       return (
         <Image
