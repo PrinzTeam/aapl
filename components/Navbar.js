@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-end">
       <Image quality={100} width={150} height={150} src="/aapl_logo.png" />{" "}
-      <ul className="flex ml-auto text-3xl gap-x-10 text-gray-700">
+      <ul className="hidden md:flex ml-auto text-3xl gap-x-10 text-gray-700">
         <Link href="/" passHref>
           <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  border-none cursor-pointer">
             Home
