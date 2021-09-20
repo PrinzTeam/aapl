@@ -13,7 +13,7 @@ export default function ARTTalks(props) {
     <Layout>
       <main>
         <section className="bg-aapl-red mt-10 md:mt-32">
-          <h1 className="text-center text-5xl py-5 px-5 text-gray-50">
+          <h1 className="text-center text-3xl md:text-5xl py-5 px-5 text-gray-50">
             {props.data?.getArttalksDocument?.data?.mainTitle?.[locale || "en"]}
           </h1>
         </section>
@@ -33,12 +33,15 @@ export default function ARTTalks(props) {
           <ul className="space-y-10">
             {props?.data?.getArttalksDocument?.data?.days.map((day) => (
               <li key={day.title}>
-                <Disclosure as="details" className="text-6xl cursor-pointer">
+                <Disclosure
+                  as="details"
+                  className="text-4xl md:text-6xl cursor-pointer"
+                >
                   {({ open }) => (
                     <>
                       <Disclosure.Button
                         as="summary"
-                        className="list-none pl-5 pr-20 py-10 text-white bg-gray-500 flex"
+                        className="list-none pl-5 pr-5 md:pr-20 py-10 text-white bg-gray-500 flex"
                       >
                         <span className="font-bold">
                           {day.title[locale || "en"]}

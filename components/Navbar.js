@@ -66,7 +66,7 @@ const NavbarMobile = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute flex flex-col gap-y-5 items-end right-0 origin-top-right bg-white divide-y divide-gra-100  rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none list-none min-w-[200px] px-4 py-5 text-2xl">
+          <Menu.Items className="absolute flex flex-col gap-y-5 items-end right-0 origin-top-right bg-white   rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none list-none min-w-[200px] px-4 py-5 text-2xl">
             <Menu.Item className="h-full">
               <Link href="/" passHref>
                 Home
