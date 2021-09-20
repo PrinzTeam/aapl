@@ -7,7 +7,7 @@ const AboutPage = (props) => {
   console.log(props.data);
   return (
     <Layout>
-      <section className="mt-32">
+      <section className="mt-10 md:mt-32">
         <div
           className="text-2xl prose mx-auto"
           dangerouslySetInnerHTML={{

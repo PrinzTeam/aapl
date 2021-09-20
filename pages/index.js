@@ -10,7 +10,7 @@ export default function Home(props) {
   return (
     <Layout>
       <main>
-        <section className="mt-32">
+        <section className="mt-10 md:mt-32">
           <h2 className="uppercase text-gray-400 font-bold text-6xl">
             ART-Talks
           </h2>

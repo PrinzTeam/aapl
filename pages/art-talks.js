@@ -9,7 +9,7 @@ export default function ARTTalks(props) {
   return (
     <Layout>
       <main>
-        <section className="bg-aapl-red mt-32">
+        <section className="bg-aapl-red mt-10 md:mt-32">
           <h1 className="text-center text-5xl py-5 px-5 text-gray-50">
             {props.data?.getArttalksDocument?.data?.mainTitle?.[locale || "en"]}
           </h1>

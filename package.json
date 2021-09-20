@@ -12,7 +12,8 @@
     "tina-start": "yarn tinacms server:start -c \"next start\""
   },
   "dependencies": {
-    "@headlessui/react": "^1.3.0",
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.4",
     "@tailwindcss/typography": "^0.4.1",
     "@tinacms/auth": "^0.50.1",
     "date-fns": "^2.23.0",
