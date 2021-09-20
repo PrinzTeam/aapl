@@ -51,7 +51,7 @@ const DesktopNavbar = () => {
 
 const NavbarMobile = () => {
   return (
-    <nav className="flex justify-between items-center">
+    <nav className="flex md:hidden justify-between items-center">
       <Image quality={100} width={90} height={90} src="/aapl_logo.png" />
       <Menu as="div" className="relative">
         <Menu.Button>
