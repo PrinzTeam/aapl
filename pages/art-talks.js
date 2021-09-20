@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout";
 import { getStaticPropsForTina } from "tinacms";
 import { useRouter } from "next/dist/client/router";
 import TemplateRenderer from "../components/TemplateRenderer";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/solid";
+import classNames from "classnames";
 
 export default function ARTTalks(props) {
   const { locale } = useRouter();
@@ -30,22 +33,35 @@ export default function ARTTalks(props) {
           <ul className="space-y-10">
             {props?.data?.getArttalksDocument?.data?.days.map((day) => (
               <li key={day.title}>
-                <details className="text-6xl cursor-pointer">
-                  <summary className="list-none pl-5 py-10 text-white bg-gray-500">
-                    <span className="font-bold">
-                      {day.title[locale || "en"]}
-                    </span>
-                    :
-                    <span className="font-normal">
-                      {day?.subtitle[locale || "en"]}
-                    </span>
-                  </summary>
-                  <div className="text-xl mt-5 px-5">
-                    {day.body?.map((component) => (
-                      <TemplateRenderer component={component} />
-                    ))}
-                  </div>
-                </details>
+                <Disclosure as="details" className="text-6xl cursor-pointer">
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button
+                        as="summary"
+                        className="list-none pl-5 pr-20 py-10 text-white bg-gray-500 flex"
+                      >
+                        <span className="font-bold">
+                          {day.title[locale || "en"]}
+                        </span>
+                        :
+                        <span className="font-normal">
+                          {day?.subtitle[locale || "en"]}
+                        </span>
+                        <ChevronUpIcon
+                          className={classNames(
+                            "transition-transform ml-auto h-14 w-1h-14  text-white",
+                            { "rotate-180": open }
+                          )}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="text-xl mt-5 px-5">
+                        {day.body?.map((component) => (
+                          <TemplateRenderer component={component} />
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
               </li>
             ))}
           </ul>
