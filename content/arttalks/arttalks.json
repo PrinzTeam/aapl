@@ -12,14 +12,14 @@
   "days": [
     {
       "title": {
-        "en": "Day 1",
-        "fr": "Day 1",
-        "kor": "Day 1"
+        "en": "Panel 1 ",
+        "fr": "Séance 1 ",
+        "kor": "Panel 1"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct.18th.2021",
+        "fr": "18 octobre 2021",
+        "kor": "Oct.18th.2021"
       },
       "body": [
         {
