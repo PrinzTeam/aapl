@@ -7,8 +7,8 @@
   "days": [
     {
       "title": {
-        "en": "DAY 1",
-        "fr": "Jour 1",
+        "en": "Panel 1",
+        "fr": "Séance 1",
         "kor": "Day 1"
       },
       "subtitle": {
@@ -19,8 +19,8 @@
     },
     {
       "title": {
-        "en": "Day 2",
-        "fr": "Day 2",
+        "en": "Panel 2",
+        "fr": "Séance 2 ",
         "kor": "Day 2"
       },
       "subtitle": {
