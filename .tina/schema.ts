@@ -158,6 +158,32 @@ export default defineSchema({
       ],
     },
     {
+      label: "Archive",
+      name: "archive",
+      path: "content/archive",
+      fields: [
+        {
+          label: "Description",
+          type: "object",
+          name: "description",
+          fields: localizedString({ textArea: true }),
+        },
+      ],
+    },
+    {
+      label: "Submission",
+      name: "submission",
+      path: "content/submission",
+      fields: [
+        {
+          label: "Description",
+          type: "object",
+          name: "description",
+          fields: localizedString({ textArea: true }),
+        },
+      ],
+    },
+    {
       label: "About",
       name: "about",
       path: "content/about",

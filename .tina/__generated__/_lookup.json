@@ -6,6 +6,8 @@
       "posts",
       "arttalks",
       "home",
+      "archive",
+      "submission",
       "about"
     ]
   },
@@ -112,5 +114,35 @@
     "type": "AboutConnection",
     "resolveType": "collectionDocumentList",
     "collection": "about"
+  },
+  "ArchiveDocument": {
+    "type": "ArchiveDocument",
+    "resolveType": "collectionDocument",
+    "collection": "archive"
+  },
+  "ArchiveConnection": {
+    "type": "ArchiveConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "archive"
+  },
+  "SubmissonDocument": {
+    "type": "SubmissonDocument",
+    "resolveType": "collectionDocument",
+    "collection": "submisson"
+  },
+  "SubmissonConnection": {
+    "type": "SubmissonConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "submisson"
+  },
+  "SubmissionDocument": {
+    "type": "SubmissionDocument",
+    "resolveType": "collectionDocument",
+    "collection": "submission"
+  },
+  "SubmissionConnection": {
+    "type": "SubmissionConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "submission"
   }
 }

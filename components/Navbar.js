@@ -23,24 +23,16 @@ const DesktopNavbar = () => {
             About
           </li>
         </Link>
-        <a
-          href="https://koreanfilm.ca/archives/art-talks/2020"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
+        <Link href="/archive">
           <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  cursor-pointer">
             Archive
           </li>
-        </a>
-        <a
-          href="https://forms.gle/nxvp3ofKJFfF5cnP8"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
+        </Link>
+        <Link href="/submission" passHref>
           <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  cursor-pointer">
             Submit
           </li>
-        </a>
+        </Link>
         {/* <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  cursor-pointer">
       FR
     </li> */}

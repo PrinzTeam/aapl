@@ -12,11 +12,6 @@ export default function ARTTalks(props) {
   return (
     <Layout>
       <main>
-        <section className="bg-aapl-red mt-10 md:mt-32">
-          <h1 className="text-center text-3xl md:text-5xl py-5 px-5 text-gray-50">
-            {props.data?.getArttalksDocument?.data?.mainTitle?.[locale || "en"]}
-          </h1>
-        </section>
         <section className="mt-10">
           <h2 className="uppercase text-gray-400 font-bold text-6xl">
             ART-Talks

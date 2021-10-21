@@ -51,6 +51,10 @@ type Query {
   getArttalksList(before: String, after: String, first: Int, last: Int): ArttalksConnection!
   getHomeDocument(relativePath: String): HomeDocument!
   getHomeList(before: String, after: String, first: Int, last: Int): HomeConnection!
+  getArchiveDocument(relativePath: String): ArchiveDocument!
+  getArchiveList(before: String, after: String, first: Int, last: Int): ArchiveConnection!
+  getSubmissionDocument(relativePath: String): SubmissionDocument!
+  getSubmissionList(before: String, after: String, first: Int, last: Int): SubmissionConnection!
   getAboutDocument(relativePath: String): AboutDocument!
   getAboutList(before: String, after: String, first: Int, last: Int): AboutConnection!
 }
@@ -78,7 +82,7 @@ type Collection {
   documents(before: String, after: String, first: Int, last: Int): DocumentConnection!
 }
 
-union DocumentNode = PostsDocument | ArttalksDocument | HomeDocument | AboutDocument
+union DocumentNode = PostsDocument | ArttalksDocument | HomeDocument | ArchiveDocument | SubmissionDocument | AboutDocument
 
 type Posts {
   title: String
@@ -236,6 +240,66 @@ type HomeConnection implements Connection {
   edges: [HomeConnectionEdges]
 }
 
+type ArchiveDescription {
+  en: String
+  fr: String
+  kor: String
+}
+
+type Archive {
+  description: ArchiveDescription
+}
+
+type ArchiveDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: Archive!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type ArchiveConnectionEdges {
+  cursor: String
+  node: ArchiveDocument
+}
+
+type ArchiveConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Int!
+  edges: [ArchiveConnectionEdges]
+}
+
+type SubmissionDescription {
+  en: String
+  fr: String
+  kor: String
+}
+
+type Submission {
+  description: SubmissionDescription
+}
+
+type SubmissionDocument implements Node & Document {
+  id: ID!
+  sys: SystemInfo!
+  data: Submission!
+  form: JSON!
+  values: JSON!
+  dataJSON: JSON!
+}
+
+type SubmissionConnectionEdges {
+  cursor: String
+  node: SubmissionDocument
+}
+
+type SubmissionConnection implements Connection {
+  pageInfo: PageInfo
+  totalCount: Int!
+  edges: [SubmissionConnectionEdges]
+}
+
 type AboutContent {
   en: String
   fr: String
@@ -272,6 +336,8 @@ type Mutation {
   updatePostsDocument(relativePath: String!, params: PostsMutation!): PostsDocument!
   updateArttalksDocument(relativePath: String!, params: ArttalksMutation!): ArttalksDocument!
   updateHomeDocument(relativePath: String!, params: HomeMutation!): HomeDocument!
+  updateArchiveDocument(relativePath: String!, params: ArchiveMutation!): ArchiveDocument!
+  updateSubmissionDocument(relativePath: String!, params: SubmissionMutation!): SubmissionDocument!
   updateAboutDocument(relativePath: String!, params: AboutMutation!): AboutDocument!
 }
 
@@ -279,6 +345,8 @@ input DocumentMutation {
   posts: PostsMutation
   arttalks: ArttalksMutation
   home: HomeMutation
+  archive: ArchiveMutation
+  submission: SubmissionMutation
   about: AboutMutation
 }
 
@@ -380,6 +448,26 @@ input HomeDaysMutation {
 input HomeMutation {
   description: HomeDescriptionMutation
   days: [HomeDaysMutation]
+}
+
+input ArchiveDescriptionMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input ArchiveMutation {
+  description: ArchiveDescriptionMutation
+}
+
+input SubmissionDescriptionMutation {
+  en: String
+  fr: String
+  kor: String
+}
+
+input SubmissionMutation {
+  description: SubmissionDescriptionMutation
 }
 
 input AboutContentMutation {

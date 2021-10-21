@@ -364,6 +364,82 @@
       ]
     },
     {
+      "label": "Archive",
+      "name": "archive",
+      "path": "content/archive",
+      "fields": [
+        {
+          "label": "Description",
+          "type": "object",
+          "name": "description",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              }
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              }
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Submission",
+      "name": "submission",
+      "path": "content/submission",
+      "fields": [
+        {
+          "label": "Description",
+          "type": "object",
+          "name": "description",
+          "fields": [
+            {
+              "type": "string",
+              "name": "en",
+              "label": "en",
+              "ui": {
+                "component": "textarea"
+              }
+            },
+            {
+              "type": "string",
+              "name": "fr",
+              "label": "fr",
+              "ui": {
+                "component": "textarea"
+              }
+            },
+            {
+              "type": "string",
+              "name": "kor",
+              "label": "kor",
+              "ui": {
+                "component": "textarea"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "label": "About",
       "name": "about",
       "path": "content/about",

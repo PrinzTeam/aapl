@@ -69,6 +69,10 @@ export type Query = {
   getArttalksList: ArttalksConnection;
   getHomeDocument: HomeDocument;
   getHomeList: HomeConnection;
+  getArchiveDocument: ArchiveDocument;
+  getArchiveList: ArchiveConnection;
+  getSubmissionDocument: SubmissionDocument;
+  getSubmissionList: SubmissionConnection;
   getAboutDocument: AboutDocument;
   getAboutList: AboutConnection;
 };
@@ -137,6 +141,32 @@ export type QueryGetHomeListArgs = {
 };
 
 
+export type QueryGetArchiveDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryGetArchiveListArgs = {
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryGetSubmissionDocumentArgs = {
+  relativePath?: Maybe<Scalars['String']>;
+};
+
+
+export type QueryGetSubmissionListArgs = {
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryGetAboutDocumentArgs = {
   relativePath?: Maybe<Scalars['String']>;
 };
@@ -183,7 +213,7 @@ export type CollectionDocumentsArgs = {
   last?: Maybe<Scalars['Int']>;
 };
 
-export type DocumentNode = PostsDocument | ArttalksDocument | HomeDocument | AboutDocument;
+export type DocumentNode = PostsDocument | ArttalksDocument | HomeDocument | ArchiveDocument | SubmissionDocument | AboutDocument;
 
 export type Posts = {
   __typename?: 'Posts';
@@ -367,6 +397,76 @@ export type HomeConnection = Connection & {
   edges?: Maybe<Array<Maybe<HomeConnectionEdges>>>;
 };
 
+export type ArchiveDescription = {
+  __typename?: 'ArchiveDescription';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type Archive = {
+  __typename?: 'Archive';
+  description?: Maybe<ArchiveDescription>;
+};
+
+export type ArchiveDocument = Node & Document & {
+  __typename?: 'ArchiveDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: Archive;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type ArchiveConnectionEdges = {
+  __typename?: 'ArchiveConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<ArchiveDocument>;
+};
+
+export type ArchiveConnection = Connection & {
+  __typename?: 'ArchiveConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<ArchiveConnectionEdges>>>;
+};
+
+export type SubmissionDescription = {
+  __typename?: 'SubmissionDescription';
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type Submission = {
+  __typename?: 'Submission';
+  description?: Maybe<SubmissionDescription>;
+};
+
+export type SubmissionDocument = Node & Document & {
+  __typename?: 'SubmissionDocument';
+  id: Scalars['ID'];
+  sys: SystemInfo;
+  data: Submission;
+  form: Scalars['JSON'];
+  values: Scalars['JSON'];
+  dataJSON: Scalars['JSON'];
+};
+
+export type SubmissionConnectionEdges = {
+  __typename?: 'SubmissionConnectionEdges';
+  cursor?: Maybe<Scalars['String']>;
+  node?: Maybe<SubmissionDocument>;
+};
+
+export type SubmissionConnection = Connection & {
+  __typename?: 'SubmissionConnection';
+  pageInfo?: Maybe<PageInfo>;
+  totalCount: Scalars['Int'];
+  edges?: Maybe<Array<Maybe<SubmissionConnectionEdges>>>;
+};
+
 export type AboutContent = {
   __typename?: 'AboutContent';
   en?: Maybe<Scalars['String']>;
@@ -409,6 +509,8 @@ export type Mutation = {
   updatePostsDocument: PostsDocument;
   updateArttalksDocument: ArttalksDocument;
   updateHomeDocument: HomeDocument;
+  updateArchiveDocument: ArchiveDocument;
+  updateSubmissionDocument: SubmissionDocument;
   updateAboutDocument: AboutDocument;
 };
 
@@ -445,6 +547,18 @@ export type MutationUpdateHomeDocumentArgs = {
 };
 
 
+export type MutationUpdateArchiveDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: ArchiveMutation;
+};
+
+
+export type MutationUpdateSubmissionDocumentArgs = {
+  relativePath: Scalars['String'];
+  params: SubmissionMutation;
+};
+
+
 export type MutationUpdateAboutDocumentArgs = {
   relativePath: Scalars['String'];
   params: AboutMutation;
@@ -454,6 +568,8 @@ export type DocumentMutation = {
   posts?: Maybe<PostsMutation>;
   arttalks?: Maybe<ArttalksMutation>;
   home?: Maybe<HomeMutation>;
+  archive?: Maybe<ArchiveMutation>;
+  submission?: Maybe<SubmissionMutation>;
   about?: Maybe<AboutMutation>;
 };
 
@@ -555,6 +671,26 @@ export type HomeDaysMutation = {
 export type HomeMutation = {
   description?: Maybe<HomeDescriptionMutation>;
   days?: Maybe<Array<Maybe<HomeDaysMutation>>>;
+};
+
+export type ArchiveDescriptionMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type ArchiveMutation = {
+  description?: Maybe<ArchiveDescriptionMutation>;
+};
+
+export type SubmissionDescriptionMutation = {
+  en?: Maybe<Scalars['String']>;
+  fr?: Maybe<Scalars['String']>;
+  kor?: Maybe<Scalars['String']>;
+};
+
+export type SubmissionMutation = {
+  description?: Maybe<SubmissionDescriptionMutation>;
 };
 
 export type AboutContentMutation = {
