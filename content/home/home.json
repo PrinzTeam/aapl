@@ -1,56 +1,56 @@
 {
   "description": {
-    "en": "Lorem Ipsum is simply dummy text of the printin industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It Aldus PageMaker including versions of Lorem Ipsum.",
-    "fr": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "kor": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "en": "Asian Art Publication Lab (AAPL) is a cluster organization with a focus on research and creation around Asian visual and media arts, located in Montréal, Québec, Canada. AAPL serves as a platform to engage and collaborate with a network of emerging and established artists and researchers, in an intersecting environment of experimentation and interdisciplinarity. Through this collective, we strive to create a community founded on inclusivity and decolonization through critical dialogue.",
+    "fr": "Asian Art Publication Lab (AAPL) est une organisation qui met en lumière la recherche-création en arts visuels et médiatiques asiatiques. Située à Montréal, l'AAPL constitue une plate-forme interdisciplinaire pour artistes et chercheurs émergents et établis. À travers ce collectif, nous nous efforçons de créer une communauté fondée sur l'inclusivité et la décolonisation à travers un dialogue critique.",
+    "kor": "Asian Art Publication Lab (AAPL) is a cluster organization with a focus on research and creation around Asian visual and media arts, located in Montréal, Québec, Canada. AAPL serves as a platform to engage and collaborate with a network of emerging and established artists and researchers, in an intersecting environment of experimentation and interdisciplinarity. Through this collective, we strive to create a community founded on inclusivity and decolonization through critical dialogue."
   },
   "days": [
     {
       "title": {
-        "en": "Day 1",
-        "fr": "Day 1",
+        "en": "Panel 1",
+        "fr": "Séance 1",
         "kor": "Day 1"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct.15th. 2021",
+        "fr": "15 octobre 2021",
+        "kor": "2021년10월15일"
       }
     },
     {
       "title": {
-        "en": "Day 2",
-        "fr": "Day 2",
+        "en": "Panel 2",
+        "fr": "Séance 2 ",
         "kor": "Day 2"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct. 22nd. 2021",
+        "fr": "22 octobre 2021",
+        "kor": "2021년10월22일"
       }
     },
     {
       "title": {
-        "en": "Day 3",
-        "fr": "Day 3",
+        "en": "Panel 3",
+        "fr": "Séance 3",
         "kor": "Day 3"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct. 29th. 2021",
+        "fr": "29 octobre 2021",
+        "kor": "2021년10월29일"
       }
     },
     {
       "title": {
-        "en": "ART-Talks",
-        "fr": "Art-talks",
-        "kor": "Art-talks"
+        "en": "Q&A Forum ",
+        "fr": "Q&A Forum ",
+        "kor": "Q&A Forum "
       },
       "subtitle": {
-        "en": "Q&A",
-        "fr": "Q&A",
-        "kor": "Q&A"
+        "en": "From Oct.31st. 2021",
+        "fr": "À partir du 31 octobre 2021",
+        "kor": "2021년10월31일부터"
       }
     }
   ]

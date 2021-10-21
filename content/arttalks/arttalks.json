@@ -1,32 +1,32 @@
 {
   "mainTitle": {
-    "en": "Call for submissions Deadline: Sept.30 EN",
-    "fr": "fr",
-    "kor": "korean"
+    "en": "Call for submissions Deadline: Oct.10th. 2021 ",
+    "fr": "Appel d'oeuvres Date limite : 10 octobre 2021",
+    "kor": "Call for submissions Deadline: Oct.10th. 2021 "
   },
   "description": {
-    "en": "description",
-    "fr": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "kor": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "en": "ART-Talks, a hybrid form of conferences, is accepting submissions. We welcome written essays, PPT presentations, and audio-visual essays (auto-biographical or analytic documentary style), that explore “Women’s Perspective in Korean Film.” From this year, a new section called EMERGENTS is installed that accepts essays of students and young researchers in universities, and members of the general public.  ",
+    "fr": "ART-Talks constitute une forme hybride de conférences. Nous accueillons les essais écrits, les présentations PPT et les essais audiovisuels (style documentaire autobiographique ou analytique), qui explorent le thème « Perspectives des femmes dans le cinéma coréen ». À partir de cette année, la nouvelle section EMERGENTS accepte les essais des étudiants et jeunes chercheurs des universités, et des membres du grand public.",
+    "kor": "ART-Talks, a hybrid form of conferences, is accepting submissions. We welcome written essays, PPT presentations, and audio-visual essays (auto-biographical or analytic documentary style), that explore “Women’s Perspective in Korean Film.” From this year, a new section called EMERGENTS is installed that accepts essays of students and young researchers in universities, and members of the general public.  "
   },
   "days": [
     {
       "title": {
-        "en": "Day 1",
-        "fr": "Day 1",
-        "kor": "Day 1"
+        "en": "Panel 1 ",
+        "fr": "Séance 1 ",
+        "kor": "Panel 1"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct.18th.2021",
+        "fr": "18 octobre 2021",
+        "kor": "Oct.18th.2021"
       },
       "body": [
         {
           "title": {
-            "en": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more ",
-            "fr": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more ",
-            "kor": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more "
+            "en": "\"Back to the Roots from Women's Perspective\"",
+            "fr": "\"Back to the Roots from Women's Perspective\"",
+            "kor": "\"Back to the Roots from Women's Perspective\""
           },
           "_template": "text"
         },
@@ -38,26 +38,26 @@
     },
     {
       "title": {
-        "en": "Day 2",
-        "fr": "Day 2",
-        "kor": "Day 2"
+        "en": "Panel 2",
+        "fr": "Séance 2",
+        "kor": "Panel 2"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct. 22nd. 2021",
+        "fr": "22 octobre 2021",
+        "kor": "Oct. 22nd. 2021"
       }
     },
     {
       "title": {
-        "en": "Day 3",
-        "fr": "Day 3",
-        "kor": "Day 3"
+        "en": "Panel 3",
+        "fr": "Séance 3",
+        "kor": "Panel 3"
       },
       "subtitle": {
-        "en": "18 oct",
-        "fr": "18 oct",
-        "kor": "18 oct"
+        "en": "Oct. 29th. 2021",
+        "fr": "29 octobre 2021",
+        "kor": "Oct. 29th. 2021"
       }
     }
   ]
