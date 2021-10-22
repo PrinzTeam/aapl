@@ -3,11 +3,15 @@ import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
+import { useRouter } from "next/dist/client/router";
+import classNames from "classnames";
+
 const DesktopNavbar = () => {
+  const router = useRouter();
   return (
     <nav className="hidden md:flex items-end">
       <Image quality={100} width={150} height={150} src="/aapl_logo.png" />
-      <ul className="hidden md:flex ml-auto text-3xl gap-x-10 text-gray-700">
+      <ul className="hidden md:flex items-end ml-auto text-3xl gap-x-10 text-gray-700">
         <Link href="/" passHref>
           <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  border-none cursor-pointer">
             Home
@@ -33,9 +37,23 @@ const DesktopNavbar = () => {
             Submit
           </li>
         </Link>
-        {/* <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2  cursor-pointer">
-      FR
-    </li> */}
+        <li className="hover:text-gray-900 hover:border-b- border-gray-900 py-2 text-lg  cursor-pointer">
+          <Link href={router.asPath} locale="fr">
+            <span
+              className={classNames({ "font-bold": router.locale == "fr" })}
+            >
+              FR
+            </span>
+          </Link>{" "}
+          /{" "}
+          <Link href={router.asPath} locale="en">
+            <span
+              className={classNames({ "font-bold": router.locale == "en" })}
+            >
+              EN
+            </span>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
