@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout";
 
 const SubmissionPage = (props) => {
   const { locale } = useRouter();
-  console.log(props.data);
   return (
     <Layout>
       <section className="mt-10 md:mt-32">

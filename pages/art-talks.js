@@ -28,7 +28,11 @@ export default function ARTTalks(props) {
         <section className="mt-10">
           <ul className="space-y-10">
             {props?.data?.getArttalksDocument?.data?.days.map((day, index) => (
-              <li className="block w-full" key={index + "dau"}>
+              <li
+                id={"panel" + index}
+                className="block w-full"
+                key={index + "dau"}
+              >
                 <Disclosure
                   as="div"
                   className="text-2xl md:text-6xl cursor-pointer block w-full"
@@ -65,7 +69,6 @@ export default function ARTTalks(props) {
                                 );
                                 if (!art) return null;
                                 const { poster, slug, Author } = art;
-                                console.log(poster);
                                 return (
                                   <a
                                     href={`https://koreanfilm.ca/aapl/art-talks/${slug}`}
@@ -79,7 +82,7 @@ export default function ARTTalks(props) {
                                         poster.url
                                       }
                                     />
-                                    <h2 className="mt-2 md:mt-4">{Author}</h2>
+                                    <h2 className="mt-2">{Author}</h2>
                                   </a>
                                 );
                               })}
