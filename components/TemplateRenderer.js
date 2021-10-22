@@ -1,14 +1,14 @@
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 
-const TemplateRenderer = ({ component }) => {
+const TemplateRenderer = ({ component, className }) => {
   const { locale } = useRouter();
   const { __typename } = component;
   console.log({ component, __typename });
   switch (__typename) {
     case "ArttalksDaysBodyText":
       const { title } = component;
-      return <h1>{title[locale || "en"]}</h1>;
+      return <h1 className={className}>{title[locale || "en"]}</h1>;
     case "ArttalksDaysBodyVideo":
       const { vimeoUrl } = component;
       return <h1>{vimeoUrl}</h1>;

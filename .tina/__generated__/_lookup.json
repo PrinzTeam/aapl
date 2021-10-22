@@ -144,5 +144,15 @@
     "type": "SubmissionConnection",
     "resolveType": "collectionDocumentList",
     "collection": "submission"
+  },
+  "ArtistsDocument": {
+    "type": "ArtistsDocument",
+    "resolveType": "collectionDocument",
+    "collection": "artists"
+  },
+  "ArtistsConnection": {
+    "type": "ArtistsConnection",
+    "resolveType": "collectionDocumentList",
+    "collection": "artists"
   }
 }

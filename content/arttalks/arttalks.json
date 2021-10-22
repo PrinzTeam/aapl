@@ -24,15 +24,11 @@
       "body": [
         {
           "title": {
-            "en": "\"Back to the Roots from Women's Perspective\"",
+            "en": "Back to the Roots from Women's Perspective",
             "fr": "\"Back to the Roots from Women's Perspective\"",
             "kor": "\"Back to the Roots from Women's Perspective\""
           },
           "_template": "text"
-        },
-        {
-          "vimeoUrl": "https://vimeo.com/605179964",
-          "_template": "video"
         }
       ]
     },
@@ -46,7 +42,17 @@
         "en": "Oct. 22nd. 2021",
         "fr": "22 octobre 2021",
         "kor": "Oct. 22nd. 2021"
-      }
+      },
+      "body": [
+        {
+          "title": {
+            "en": " ",
+            "fr": " ",
+            "kor": " "
+          },
+          "_template": "text"
+        }
+      ]
     },
     {
       "title": {
