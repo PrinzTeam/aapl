@@ -14,9 +14,13 @@ export default function Home(props) {
           <h2 className="uppercase text-gray-400 font-bold text-6xl">
             ART-Talks
           </h2>
-          <p className="text-2xl mt-10">
-            {props?.data?.getHomeDocument?.data?.description[locale || "en"]}
-          </p>
+          <pre
+            className="text-2xl mt-10 whitespace-pre-line font-sans"
+            dangerouslySetInnerHTML={{
+              __html:
+                props?.data?.getHomeDocument?.data?.description[locale || "en"],
+            }}
+          ></pre>
         </section>
         <section className="mt-10 flex flex-col md:flex-row  gap-x-5 gap-y-5">
           {props?.data?.getHomeDocument?.data?.days.map((day, index) => (

@@ -7,13 +7,13 @@ const ArchivePage = (props) => {
   return (
     <Layout>
       <section className="mt-10 md:mt-32">
-        <div
-          className="text-2xl mx-auto"
+        <pre
+          className="text-2xl mt-10 whitespace-pre-line font-sans"
           dangerouslySetInnerHTML={{
             __html:
               props.data.getArchiveDocument.data.description[locale || "en"],
           }}
-        ></div>
+        ></pre>
         <section className="mt-10 ">
           <a
             href="https://koreanfilm.ca/archives/art-talks/2020"

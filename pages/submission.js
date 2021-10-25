@@ -7,13 +7,13 @@ const SubmissionPage = (props) => {
   return (
     <Layout>
       <section className="mt-10 md:mt-32">
-        <div
-          className="text-2xl mx-auto"
+        <pre
+          className="text-2xl mt-10 whitespace-pre-line font-sans"
           dangerouslySetInnerHTML={{
             __html:
               props.data.getSubmissionDocument.data.description[locale || "en"],
           }}
-        ></div>
+        ></pre>
         <section className="mt-10 ">
           <a
             href="https://forms.gle/nxvp3ofKJFfF5cnP8"

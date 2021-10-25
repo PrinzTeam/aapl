@@ -274,20 +274,20 @@
               }
             },
             {
-              "type": "string",
+              "ui": {
+                "component": "textarea"
+              },
               "name": "fr",
               "label": "fr",
-              "ui": {
-                "component": "textarea"
-              }
+              "type": "string"
             },
             {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
               "ui": {
                 "component": "textarea"
-              }
+              },
+              "name": "kor",
+              "label": "kor",
+              "type": "string"
             }
           ]
         },
@@ -382,20 +382,20 @@
               }
             },
             {
-              "type": "string",
+              "ui": {
+                "component": "textarea"
+              },
               "name": "fr",
               "label": "fr",
-              "ui": {
-                "component": "textarea"
-              }
+              "type": "string"
             },
             {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
               "ui": {
                 "component": "textarea"
-              }
+              },
+              "name": "kor",
+              "label": "kor",
+              "type": "string"
             }
           ]
         }
@@ -420,20 +420,20 @@
               }
             },
             {
-              "type": "string",
+              "ui": {
+                "component": "textarea"
+              },
               "name": "fr",
               "label": "fr",
-              "ui": {
-                "component": "textarea"
-              }
+              "type": "string"
             },
             {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
               "ui": {
                 "component": "textarea"
-              }
+              },
+              "name": "kor",
+              "label": "kor",
+              "type": "string"
             }
           ]
         }

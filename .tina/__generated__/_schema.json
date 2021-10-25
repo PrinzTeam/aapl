@@ -480,12 +480,12 @@
               ]
             },
             {
-              "type": "string",
-              "name": "fr",
-              "label": "fr",
               "ui": {
                 "component": "textarea"
               },
+              "name": "fr",
+              "label": "fr",
+              "type": "string",
               "namespace": [
                 "home",
                 "description",
@@ -493,12 +493,12 @@
               ]
             },
             {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
               "ui": {
                 "component": "textarea"
               },
+              "name": "kor",
+              "label": "kor",
+              "type": "string",
               "namespace": [
                 "home",
                 "description",
@@ -660,12 +660,12 @@
               ]
             },
             {
-              "type": "string",
-              "name": "fr",
-              "label": "fr",
               "ui": {
                 "component": "textarea"
               },
+              "name": "fr",
+              "label": "fr",
+              "type": "string",
               "namespace": [
                 "archive",
                 "description",
@@ -673,12 +673,12 @@
               ]
             },
             {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
               "ui": {
                 "component": "textarea"
               },
+              "name": "kor",
+              "label": "kor",
+              "type": "string",
               "namespace": [
                 "archive",
                 "description",
@@ -720,12 +720,12 @@
               ]
             },
             {
-              "type": "string",
-              "name": "fr",
-              "label": "fr",
               "ui": {
                 "component": "textarea"
               },
+              "name": "fr",
+              "label": "fr",
+              "type": "string",
               "namespace": [
                 "submission",
                 "description",
@@ -733,12 +733,12 @@
               ]
             },
             {
-              "type": "string",
-              "name": "kor",
-              "label": "kor",
               "ui": {
                 "component": "textarea"
               },
+              "name": "kor",
+              "label": "kor",
+              "type": "string",
               "namespace": [
                 "submission",
                 "description",

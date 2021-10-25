@@ -4,7 +4,6 @@ import Image from "next/image";
 const TemplateRenderer = ({ component, className }) => {
   const { locale } = useRouter();
   const { __typename } = component;
-  console.log({ component, __typename });
   switch (__typename) {
     case "ArttalksDaysBodyText":
       const { title } = component;

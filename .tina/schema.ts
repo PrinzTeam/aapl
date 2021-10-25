@@ -25,6 +25,33 @@ const localizedString = ({ textArea = false } = {}) => [
     },
   },
 ];
+
+const localizedHtml = [
+  {
+    type: "string",
+    name: "en",
+    label: "en",
+    ui: {
+      component: "textarea",
+    },
+  },
+  {
+    ui: {
+      component: "textarea",
+    },
+    name: "fr",
+    label: "fr",
+    type: "string",
+  },
+  {
+    ui: {
+      component: "textarea",
+    },
+    name: "kor",
+    label: "kor",
+    type: "string",
+  },
+];
 export default defineSchema({
   collections: [
     {
@@ -133,7 +160,7 @@ export default defineSchema({
           label: "Description",
           type: "object",
           name: "description",
-          fields: localizedString({ textArea: true }),
+          fields: localizedHtml,
         },
         {
           label: "Days",
@@ -166,7 +193,7 @@ export default defineSchema({
           label: "Description",
           type: "object",
           name: "description",
-          fields: localizedString({ textArea: true }),
+          fields: localizedHtml,
         },
       ],
     },
@@ -179,7 +206,7 @@ export default defineSchema({
           label: "Description",
           type: "object",
           name: "description",
-          fields: localizedString({ textArea: true }),
+          fields: localizedHtml,
         },
       ],
     },
