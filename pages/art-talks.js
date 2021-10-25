@@ -177,7 +177,7 @@ export const getStaticProps = async () => {
     },
     {
       title1: `Panel 2 Oct.22th. 2021`,
-      title2: `Coming soon`,
+      title2: `Through the Lens of Korean Culture`,
       active: true,
       ids: [
         "6162495025c9f4001628f739",
