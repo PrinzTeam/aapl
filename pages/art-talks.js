@@ -36,7 +36,7 @@ export default function ARTTalks(props) {
                 <Disclosure
                   as="div"
                   className="text-2xl md:text-6xl cursor-pointer block w-full"
-                  defaultOpen={index === 0 || index === 1}
+                  defaultOpen={index === 0 || index === 1 || index === 2}
                 >
                   {({ open }) => (
                     <>
@@ -185,6 +185,21 @@ export const getStaticProps = async () => {
         "617034c42640b70016f40893",
         "61608797f701080016add802",
         "61703d862640b70016f408a2",
+      ],
+    },
+    {
+      title1: `Panel 2 Oct.29th. 2021`,
+      title2: `International Voices on Asia`,
+      active: true,
+      ids: [
+        "61781fe5c6ed560016c4d6e8",
+        "6162452125c9f4001628f717",
+        "616243ba25c9f4001628f70c",
+        "6179a78272dd230016ff5e15",
+        "6179963972dd230016ff5e0a",
+        "6176d54f5bb4ec00164b4897",
+        "6179670d72dd230016ff5e00",
+        "616248df25c9f4001628f734",
       ],
     },
   ];

@@ -46,9 +46,9 @@
       "body": [
         {
           "title": {
-            "en": " ",
-            "fr": " ",
-            "kor": " "
+            "en": " Through the Lens of Korean Culture",
+            "fr": " Through the Lens of Korean Culture",
+            "kor": " Through the Lens of Korean Culture"
           },
           "_template": "text"
         }
@@ -64,7 +64,17 @@
         "en": "Oct. 29th. 2021",
         "fr": "29 octobre 2021",
         "kor": "Oct. 29th. 2021"
-      }
+      },
+      "body": [
+        {
+          "title": {
+            "en": "International Voices on Asia",
+            "fr": "International Voices on Asia",
+            "kor": "International Voices on Asia"
+          },
+          "_template": "text"
+        }
+      ]
     }
   ]
 }
